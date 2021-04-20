@@ -24,4 +24,4 @@ require'lspinstall/servers'.kotlin = vim.tbl_extend('error', config, {
     uninstall_script = nil -- can be omitted
 })
 
-require'lspinstall'.setup()a
+require'lspinstall'.setup()

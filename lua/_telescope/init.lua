@@ -62,4 +62,4 @@ require('telescope').setup {
             }
         }
     }
-}t
+}

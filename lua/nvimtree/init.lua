@@ -61,4 +61,4 @@ vim.g.nvim_tree_icons = {
     symlink = '',
     git = {unstaged = "", staged = "✓", unmerged = "", renamed = "➜", untracked = ""},
     folder = {default = "", open = "", empty = "", empty_open = "", symlink = ""}
-}'
+}

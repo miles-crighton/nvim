@@ -17,7 +17,7 @@ vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', {silent = true})
 -- TODO fix this
 -- Terminal window navigation
 vim.cmd([[
-  tnoemap <C-h> <C-\><C-N><C-w>h
+  tnoremap <C-h> <C-\><C-N><C-w>h
   tnoremap <C-j> <C-\><C-N><C-w>j
   tnoremap <C-k> <C-\><C-N><C-w>k
   tnoremap <C-l> <C-\><C-N><C-w>l
@@ -56,4 +56,4 @@ vim.api.nvim_set_keymap('x', 'J', ':move \'>+1<CR>gv-gv', {noremap = true, silen
 
 -- Better nav for omnicomplete
 vim.cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')
-vim.cmd('inoremap <expr> <c-k> (\"\\<C-p>\")')r
+vim.cmd('inoremap <expr> <c-k> (\"\\<C-p>\")')

@@ -18,4 +18,4 @@ vim.g.dashboard_custom_section = {
     c = {description = {'  Load Last Session  '}, command = 'SessionLoad'},
     d = {description = {'  Find Word          '}, command = 'Telescope live_grep'},
     e = {description = {'  Settings           '}, command = ':e ~/.config/nvim/lv-settings.lua'}
-}e
+}
