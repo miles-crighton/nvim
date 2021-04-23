@@ -22,7 +22,7 @@ local function require_plugin(plugin)
             return true
         end
     end
-   --	print(ok, err, code)
+    --	print(ok, err, code)
     if ok then
         vim.cmd("packadd " .. plugin)
     end
@@ -36,8 +36,22 @@ return require("packer").startup(
         -- Packer can manage itself as an optional plugin
         use "wbthomason/packer.nvim"
 
-		-- Git integration
-		use 'tpope/vim-fugitive'
+        -- Git integration
+        use "tpope/vim-fugitive"
+        use "TimUntersberger/neogit"
+        use "kdheepak/lazygit.nvim"
+        use {
+            "folke/lsp-trouble.nvim",
+            requires = "kyazdani42/nvim-web-devicons",
+            config = function()
+                require("trouble").setup {}
+            end
+        }
+
+        use "sbdchd/neoformat"
+        use "drewtempelmeyer/palenight.vim"
+
+        use "folke/tokyonight.nvim"
 
         -- TODO refactor all of this (for now it works, but yes I know it could be wrapped in a simpler function)
         use {"neovim/nvim-lspconfig", opt = true}
@@ -65,6 +79,8 @@ return require("packer").startup(
         use "kyazdani42/nvim-tree.lua"
         -- TODO remove when open on dir is supported by nvimtree
         use "kevinhwang91/rnvimr"
+
+		use "cdrewtempelmeyer/palenight.vim"
 
         -- use {'lukas-reineke/indent-blankline.nvim', opt=true, branch = 'lua'}
         use {"lewis6991/gitsigns.nvim", opt = true}
@@ -107,4 +123,4 @@ return require("packer").startup(
         require_plugin("galaxyline.nvim")
         require_plugin("barbar.nvim")
     end
-) 
+)
