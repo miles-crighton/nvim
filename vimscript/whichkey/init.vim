@@ -102,6 +102,7 @@ let g:which_key_map.S = {
 " g is for git
 let g:which_key_map.g = {
       \ 'name' : '+git' ,
+	\ 'g' : [':Neogit', 'neogit'],
       \ 'b' : [':GitBlameToggle'                   , 'blame'],
       \ 'B' : [':GBrowse'                          , 'browse'],
       \ 'd' : [':Git diff'                         , 'diff'],
@@ -131,6 +132,7 @@ let g:which_key_map.l = {
       \ 'p' : [':Lspsaga preview_definition'         , 'preview definition'],
       \ 'q' : [':Telescope quickfix'                 , 'quickfix'],
       \ 'r' : [':Lspsaga rename'                     , 'rename'],
+	  \ 't' : [':LspTroubleToggle'					 , 'view all troubles'],
       \ 'T' : [':LspTypeDefinition'                  , 'type defintion'],
       \ 'x' : [':cclose'                             , 'close quickfix'],
       \ 's' : [':Telescope lsp_document_symbols'     , 'document symbols'],
