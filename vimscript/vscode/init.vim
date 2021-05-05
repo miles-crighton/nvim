@@ -2,7 +2,7 @@
 " TODO Also some of it is redundant
 " packadd quickscope
 
-luafile ~/.config/nvim/lua/settings.lua
+" luafile ~/.config/nvim/lua/settings.lua
 
 " let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
@@ -104,7 +104,8 @@ nnoremap <expr> <C-/> <SID>vscodeCommentary() . '_'
 
 nnoremap <silent> <C-w>_ :<C-u>call VSCodeNotify('workbench.action.toggleEditorWidths')<CR>
 
-nnoremap <silent> <Space> :call VSCodeNotify('whichkey.show')<CR>
+" Disable which key
+" nnoremap <silent> <Space> :call VSCodeNotify('whichkey.show')<CR>
 xnoremap <silent> <Space> :<C-u>call <SID>openWhichKeyInVisualMode()<CR>
 
 xnoremap <silent> <C-P> :<C-u>call <SID>openVSCodeCommandsInVisualMode()<CR>
@@ -115,5 +116,5 @@ omap gc  <Plug>VSCodeCommentary
 nmap gcc <Plug>VSCodeCommentaryLine
 
 " Simulate same TAB behavior in VSCode
-nmap <Tab> :Tabnext<CR>
-nmap <S-Tab> :Tabprev<CR>
+" nmap <Tab> :Tabnext<CR>
+" nmap <S-Tab> :Tabprev<CR>

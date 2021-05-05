@@ -39,6 +39,7 @@ return require("packer").startup(
         -- Git integration
         use "tpope/vim-fugitive"
         -- use "TimUntersberger/neogit"
+        use "nvim-lua/plenary.nvim"
 		use "miles-crighton/neogit"
         use "kdheepak/lazygit.nvim"
         use {
