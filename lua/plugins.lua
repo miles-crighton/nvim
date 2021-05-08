@@ -38,6 +38,7 @@ return require("packer").startup(
 
         -- Git integration
         use "tpope/vim-fugitive"
+		use "APZelos/blamer.nvim"
         -- use "TimUntersberger/neogit"
         use "nvim-lua/plenary.nvim"
 		use "miles-crighton/neogit"
@@ -96,7 +97,7 @@ return require("packer").startup(
         use {"christianchiarulli/nvcode-color-schemes.vim", opt = true}
 
         -- Icons
-        use {"kyazdani42/nvim-web-devicons", opt = true}
+        -- use {"kyazdani42/nvim-web-devicons", opt = true}
 
         -- Status Line and Bufferline
         use {"glepnir/galaxyline.nvim", opt = true}
