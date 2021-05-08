@@ -17,6 +17,7 @@ require('nvimtree')
 require('treesitter')
 require('autopairs')
 require('rnvimr')
+require('diffview')
 
 -- Which Key (Hope to replace with Lua plugin someday)
 vim.cmd('source ~/.config/nvim/vimscript/whichkey/init.vim')

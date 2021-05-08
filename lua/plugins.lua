@@ -39,8 +39,9 @@ return require("packer").startup(
         -- Git integration
         use "tpope/vim-fugitive"
 		use "APZelos/blamer.nvim"
+		use 'sindrets/diffview.nvim'
+
         -- use "TimUntersberger/neogit"
-        use "nvim-lua/plenary.nvim"
 		use "miles-crighton/neogit"
         use "kdheepak/lazygit.nvim"
         use {
@@ -82,8 +83,6 @@ return require("packer").startup(
         use "kyazdani42/nvim-tree.lua"
         -- TODO remove when open on dir is supported by nvimtree
         use "kevinhwang91/rnvimr"
-
-		use "cdrewtempelmeyer/palenight.vim"
 
         -- use {'lukas-reineke/indent-blankline.nvim', opt=true, branch = 'lua'}
         use {"lewis6991/gitsigns.nvim", opt = true}
