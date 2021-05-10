@@ -1,6 +1,6 @@
 require('plugins')
 require('globals')
-require('utils')
+require('lv-utils')
 vim.cmd('luafile ~/.config/nvim/settings.lua')
 require('autocommands')
 require('settings')
