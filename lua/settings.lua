@@ -1,6 +1,7 @@
 vim.cmd('set iskeyword+=-') -- treat dash separated words as a word text object"
 vim.cmd('set shortmess+=c') -- Don't pass messages to |ins-completion-menu|.
 vim.cmd('set inccommand=split') -- Make substitution work in realtime
+vim.cmd('set autochdir') -- change the dir to current file
 vim.o.hidden = O.hidden_files -- Required to keep multiple buffers open multiple buffers
 vim.o.title = true
 TERMINAL = vim.fn.expand('$TERMINAL')
@@ -33,11 +34,14 @@ vim.o.showmode = false -- We don't need to see things like -- INSERT -- anymore
 vim.o.backup = false -- This is recommended by coc
 vim.o.writebackup = false -- This is recommended by coc
 vim.wo.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
-vim.o.updatetime = 200 -- Faster completion
-vim.o.timeoutlen = 300 -- By default timeoutlen is 1000 ms
+vim.o.updatetime = 500 -- Time before any plugins get to update
+vim.o.timeoutlen = 300 -- Time for key sequences to be completed
+vim.o.ttimeoutlen = 0
 vim.o.clipboard = "unnamedplus" -- Copy paste between vim and everything else
 -- vim.o.guifont = "JetBrainsMono\\ Nerd\\ Font\\ Mono:h18"
 -- vim.o.guifont = "Hack\\ Nerd\\ Font\\ Mono"
 -- vim.o.guifont = "SauceCodePro Nerd Font:h17"
-vim.o.guifont = "FiraCode\\ Nerd\\ Font:h17"
+-- vim.o.guifont = "FiraCode\\ Nerd\\ Font:h17"
 vim.g.tokyonight_transparent = true
+vim.g.blamer_enabled = 1
+vim.g.blamer_relative_time = 1
