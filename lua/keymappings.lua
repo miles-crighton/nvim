@@ -1,8 +1,15 @@
 vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
 vim.g.mapleader = ' '
 
+-- resource config
+vim.api.nvim_set_keymap('n', '<Leader>ss', ':luafile $MYVIMRC<CR>', {noremap = true})
+
 -- no hl
 vim.api.nvim_set_keymap('n', '<Leader>h', ':set hlsearch!<CR>', {noremap = true, silent = true})
+
+-- Add a line above/below
+-- vim.api.nvim_set_keymap('n', '<ENTER>', '<C-u>call append(line("."),   repeat([""], v:count1))<CR>', {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap('n', '<S-Enter>', '<C-u>call append(line(".")-1,   repeat([""], v:count1))<CR>', {noremap = true, silent = true})
 
 -- explorer
 vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
