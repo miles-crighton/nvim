@@ -19,15 +19,18 @@ local colors = {
     blue1 = "#2ac3de",
     blue2 = "#0db9d7",
     blue5 = "#89ddff",
+    vivid_blue = "#89ddff",
     blue6 = "#B4F9F8",
     magenta = "#bb9af7",
     purple = "#9d7cd8",
     orange = "#ff9e64",
     yellow = "#e0af68",
+    info_yellow = "#e0af68",
     green = "#9ece6a",
     green1 = "#73daca",
     teal = "#1abc9c",
     red = "#f7768e",
+    error_red = "#f7768e",
     red1 = "#db4b4b",
     diff = {change = "#394b70", add = "#164846", delete = "#823c41"},
     git = {change = "#6183bb", add = "#449dab", delete = "#f7768e"}
@@ -44,13 +47,13 @@ gls.left[1] = {
                 n = colors.blue,
                 i = colors.green,
                 v = colors.purple,
-                [""] = colors.purple,
+                [''] = colors.purple,
                 V = colors.purple,
                 c = colors.magenta,
                 no = colors.blue,
                 s = colors.orange,
                 S = colors.orange,
-                [""] = colors.orange,
+                [''] = colors.orange,
                 ic = colors.yellow,
                 R = colors.red,
                 Rv = colors.red,
@@ -58,12 +61,12 @@ gls.left[1] = {
                 ce = colors.blue,
                 r = colors.cyan,
                 rm = colors.cyan,
-                ["r?"] = colors.cyan,
-                ["!"] = colors.blue,
+                ['r?'] = colors.cyan,
+                ['!'] = colors.blue,
                 t = colors.blue
             }
-            vim.api.nvim_command("hi GalaxyViMode guifg=" .. mode_color[vim.fn.mode()])
-            return "▊ "
+            vim.api.nvim_command('hi GalaxyViMode guifg=' .. mode_color[vim.fn.mode()])
+            return '▊ '
         end,
         highlight = {colors.red, colors.bg}
     }
