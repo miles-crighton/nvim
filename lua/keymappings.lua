@@ -9,6 +9,8 @@ vim.api.nvim_set_keymap('n', '<Leader>h', ':set hlsearch!<CR>', {noremap = true,
 
 vim.api.nvim_set_keymap('n', 'K', ':lua require(\'lspsaga.hover\').render_hover_doc()<CR>', {noremap = true, silent = true})
 
+vim.api.nvim_set_keymap('n', 'gs', ':lua require(\'lspsaga.signaturehelp\').signature_help()<CR>', {noremap = true, silent = true})
+
 -- Add a line above/below
 -- vim.api.nvim_set_keymap('n', '<ENTER>', '<C-u>call append(line("."),   repeat([""], v:count1))<CR>', {noremap = true, silent = true})
 -- vim.api.nvim_set_keymap('n', '<S-Enter>', '<C-u>call append(line(".")-1,   repeat([""], v:count1))<CR>', {noremap = true, silent = true})
