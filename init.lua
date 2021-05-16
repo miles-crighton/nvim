@@ -18,9 +18,9 @@ require('treesitter')
 require('autopairs')
 require('rnvimr')
 require('diffview')
+require('lv-whichkey')
 
 -- Which Key (Hope to replace with Lua plugin someday)
-vim.cmd('source ~/.config/nvim/vimscript/whichkey/init.vim')
 vim.cmd('source ~/.config/nvim/vimscript/functions.vim')
 
 -- LSP

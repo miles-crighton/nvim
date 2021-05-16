@@ -38,11 +38,11 @@ return require("packer").startup(
 
         -- Git integration
         use "tpope/vim-fugitive"
-		use "APZelos/blamer.nvim"
-		use 'sindrets/diffview.nvim'
+        use "APZelos/blamer.nvim"
+        use 'sindrets/diffview.nvim'
 
         -- use "TimUntersberger/neogit"
-		use "miles-crighton/neogit"
+        use "miles-crighton/neogit"
         use "kdheepak/lazygit.nvim"
         use {
             "folke/lsp-trouble.nvim",
@@ -54,6 +54,7 @@ return require("packer").startup(
 
         use "sbdchd/neoformat"
         use "drewtempelmeyer/palenight.vim"
+        use 'metakirby5/codi.vim'
 
         use "folke/tokyonight.nvim"
 
@@ -86,7 +87,7 @@ return require("packer").startup(
 
         -- use {'lukas-reineke/indent-blankline.nvim', opt=true, branch = 'lua'}
         use {"lewis6991/gitsigns.nvim", opt = true}
-        use {"liuchengxu/vim-which-key", opt = true}
+        use {"folke/which-key.nvim", opt = true}
         use {"ChristianChiarulli/dashboard-nvim", opt = true}
         use {"windwp/nvim-autopairs", opt = true}
         use {"terrortylor/nvim-comment", opt = true}
@@ -100,7 +101,7 @@ return require("packer").startup(
 
         -- Status Line and Bufferline
         use {"glepnir/galaxyline.nvim", opt = true}
-        use {"romgrk/barbar.nvim", opt = true}
+        use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
 
         require_plugin("nvim-lspconfig")
         require_plugin("lspsaga.nvim")
@@ -115,7 +116,7 @@ return require("packer").startup(
         require_plugin("nvim-ts-autotag")
         require_plugin("nvim-tree.lua")
         require_plugin("gitsigns.nvim")
-        require_plugin("vim-which-key")
+        require_plugin("which-key.nvim")
         require_plugin("dashboard-nvim")
         require_plugin("nvim-autopairs")
         require_plugin("nvim-comment")
