@@ -59,7 +59,13 @@ if O.sh.formatter == 'shfmt' then table.insert(sh_arguments, shfmt) end
 if O.sh.linter == 'shellcheck' then table.insert(sh_arguments, shellcheck) end
 
 -- tsserver/web javascript react, vue, json, html, css, yaml
-local prettier = {formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true}
+local prettierd = {
+  formatCommand = 'prettierd ${INPUT}',
+  formatStdin = true,
+  env = {
+    'PRETTIERD_DEFAULT_CONFIG=~/.config/nvim/utils/linter-config/.prettierrc.json',
+  }
+}
 -- You can look for project scope Prettier and Eslint with e.g. vim.fn.glob("node_modules/.bin/prettier") etc. If it is not found revert to global Prettier where needed.
 -- local prettier = {formatCommand = "./node_modules/.bin/prettier --stdin-filepath ${INPUT}", formatStdin = true}
 
@@ -74,7 +80,7 @@ local eslint = {
 
 local tsserver_args = {}
 
-if O.tsserver.formatter == 'prettier' then table.insert(tsserver_args, prettier) end
+if O.tsserver.formatter == 'prettier' then table.insert(tsserver_args, prettierd) end
 
 if O.tsserver.linter == 'eslint' then table.insert(tsserver_args, eslint) end
 
