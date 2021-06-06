@@ -41,12 +41,7 @@ return require("packer").startup(
         use "APZelos/blamer.nvim"
         use 'sindrets/diffview.nvim'
 
-        -- use "TimUntersberger/neogit"
-        use { 'TimUntersberger/neogit', config = function() require("neogit").setup {
-integrations = {
-    diffview = true
-  },
-    } end}
+        use "TimUntersberger/neogit"
         use "kdheepak/lazygit.nvim"
         use {
             "folke/lsp-trouble.nvim",
