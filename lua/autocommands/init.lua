@@ -2,13 +2,13 @@ local utils = require('lv-utils')
 
 local auto_formatters = {            }
 
-local python_autoformat = {'BufWritePre', '*.py', 'lua vim.lsp.buf.formatting_sync(nil, 1000)'}
+local python_autoformat = {'BufWritePre', '*.py', 'lua vim.lsp.buf.formatting_sync()'}
 if O.python.autoformat then table.insert(auto_formatters, python_autoformat) end
 
-local javascript_autoformat = {'BufWritePre', '*.js', 'lua vim.lsp.buf.formatting_sync(nil, 1000)'}
-local javascriptreact_autoformat = {'BufWritePre', '*.jsx', 'lua vim.lsp.buf.formatting_sync(nil, 1000)'}
-local typescript_autoformat = {'BufWritePre', '*.ts', 'lua vim.lsp.buf.formatting_sync(nil, 1000)'}
-local typescriptreact_autoformat = {'BufWritePre', '*.tsx', 'lua vim.lsp.buf.formatting_sync(nil, 1000)'}
+local javascript_autoformat = {'BufWritePre', '*.js', 'lua vim.lsp.buf.formatting_sync()'}
+local javascriptreact_autoformat = {'BufWritePre', '*.jsx', 'lua vim.lsp.buf.formatting_sync()'}
+local typescript_autoformat = {'BufWritePost', '*.ts', 'lua vim.lsp.buf.formatting_sync()'}
+local typescriptreact_autoformat = {'BufWritePost', '*.tsx', 'lua vim.lsp.buf.formatting_sync()'}
 if O.tsserver.autoformat then
     table.insert(auto_formatters, javascript_autoformat)
     table.insert(auto_formatters, javascriptreact_autoformat)
@@ -16,10 +16,10 @@ if O.tsserver.autoformat then
     table.insert(auto_formatters, typescriptreact_autoformat)
 end
 
-local lua_format = {'BufWritePre', '*.lua', 'lua vim.lsp.buf.formatting_sync(nil, 1000)'}
+local lua_format = {'BufWritePre', '*.lua', 'lua vim.lsp.buf.formatting_sync()'}
 if O.lua.autoformat then table.insert(auto_formatters, lua_format) end
 
-local json_format = {'BufWritePre', '*.json', 'lua vim.lsp.buf.formatting_sync(nil, 1000)'}
+local json_format = {'BufWritePre', '*.json', 'lua vim.lsp.buf.formatting_sync()'}
 if O.json.autoformat then table.insert(auto_formatters, json_format) end
 
 utils.define_augroups({

@@ -7,7 +7,7 @@ require'bufferline'.setup{
     diagnostics = "nvim_lsp",
     diagnostics_indicator = function(count, level, diagnostics_dict)
       local icon = level:match("error") and "" or ""
-      return " " .. count .. icon
+      return " " .. icon
     end,
     offsets = {{filetype = "NvimTree", text = "File Explorer", highlight = "Directory", text_align = "center"}}
   }

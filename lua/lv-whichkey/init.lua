@@ -70,7 +70,7 @@ vim.api.nvim_set_keymap("n", "<leader>c", ":BufferClose<CR>", {noremap = true, s
 
 local mappings = {
     ["/"] = "Comment",
-    ["c"] = "Close Buffer",
+    ["c"] = "bd",
     ["e"] = "Explorer",
     ["f"] = "Find File",
     ["h"] = "No Highlight",

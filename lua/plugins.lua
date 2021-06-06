@@ -42,7 +42,11 @@ return require("packer").startup(
         use 'sindrets/diffview.nvim'
 
         -- use "TimUntersberger/neogit"
-        use "miles-crighton/neogit"
+        use { 'TimUntersberger/neogit', config = function() require("neogit").setup {
+integrations = {
+    diffview = true
+  },
+    } end}
         use "kdheepak/lazygit.nvim"
         use {
             "folke/lsp-trouble.nvim",
@@ -67,6 +71,7 @@ return require("packer").startup(
         use {"nvim-lua/popup.nvim", opt = true}
         use {"nvim-lua/plenary.nvim", opt = true}
         use {"nvim-telescope/telescope.nvim", opt = true}
+        use {"nvim-telescope/telescope-fzy-native.nvim", opt = true}
 
         -- Debugging
         use {"mfussenegger/nvim-dap", opt = true}
