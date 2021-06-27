@@ -16,7 +16,7 @@ require('lv-gitsigns')
 require('nvimtree')
 require('treesitter')
 require('autopairs')
-require('rnvimr')
+-- require('rnvimr')
 require('diffview')
 require('lv-whichkey')
 
