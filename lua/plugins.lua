@@ -124,6 +124,5 @@ return require("packer").startup(
         require_plugin("nvcode-color-schemes.vim")
         require_plugin("nvim-web-devicons")
         require_plugin("galaxyline.nvim")
-        require_plugin("barbar.nvim")
     end
 )
