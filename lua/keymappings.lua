@@ -12,8 +12,34 @@ vim.api.nvim_set_keymap('n', 'K', ':lua require(\'lspsaga.hover\').render_hover_
 vim.api.nvim_set_keymap('n', 'gs', ':lua require(\'lspsaga.signaturehelp\').signature_help()<CR>', {noremap = true, silent = true})
 
 -- Add a line above/below
--- vim.api.nvim_set_keymap('n', '<ENTER>', '<C-u>call append(line("."),   repeat([""], v:count1))<CR>', {noremap = true, silent = true})
--- vim.api.nvim_set_keymap('n', '<S-Enter>', '<C-u>call append(line(".")-1,   repeat([""], v:count1))<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<ENTER>', ':set paste<CR>m`o<Esc>``:set nopaste<CR>', {noremap = true, silent = true})
+-- currently broken https://stackoverflow.com/questions/16359878/how-to-map-shift-enter
+-- vim.api.nvim_set_keymap('n', '<C-ENTER>', ':set paste<CR>m`O<Esc>``:set nopaste<CR>', {noremap = true, silent = true})
+
+-- Make Y work like D
+vim.api.nvim_set_keymap('n', 'Y', 'y$', {noremap = true, silent = true})
+
+-- Stable center for next/prev
+vim.api.nvim_set_keymap('n', 'n', 'nzzzv', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'N', 'Nzzzv', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'J', 'mzJ`z', {noremap = true, silent = true})
+
+-- Undo break points (ie. undo up to comma)
+vim.api.nvim_set_keymap('i', ',', ',<c-g>u', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('i', ';', ';<c-g>u', {noremap = true, silent = true})
+
+-- Jumplist mutations
+vim.api.nvim_set_keymap('n', 'k', '(v:count > 5 ? "m\'" . v:count : "") . \'k\'', {noremap = true, silent = true, expr = true})
+vim.api.nvim_set_keymap('n', 'j', '(v:count > 5 ? "m\'" . v:count : "") . \'j\'', {noremap = true, silent = true, expr = true})
+
+-- Moving text
+vim.api.nvim_set_keymap('v', 'J', ':m \'>+1<CR>gv=gv', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', 'K', ':m \'<-2<CR>gv=gv', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('i', '<C-j>', '<esc>:m .+1<CR>==', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('i', '<C-k>', '<esc>:m .-2<CR>==', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>j', ':m .+1<CR>==', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>k', ':m .+1<CR>==', {noremap = true, silent = true})
+
 
 -- explorer
 vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
