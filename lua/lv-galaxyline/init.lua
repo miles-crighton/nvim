@@ -36,6 +36,22 @@ local colors = {
     git = {change = "#6183bb", add = "#449dab", delete = "#f7768e"}
 }
 local condition = require("galaxyline.condition")
+
+function Buffer_not_empty()
+  if vim.fn.empty(vim.fn.expand('%:t')) ~= 1 then
+    return true
+  end
+  return false
+end
+
+function Lsp_active()
+    local tbl = {["dashboard"] = true, [" "] = true}
+    if tbl[vim.bo.filetype] then
+        return false
+    end
+    return true
+end
+
 local gls = gl.section
 gl.short_line_list = {"NvimTree", "vista", "dbui", "packer"}
 
@@ -74,7 +90,40 @@ gls.left[1] = {
 print(vim.fn.getbufvar(0, "ts"))
 vim.fn.getbufvar(0, "ts")
 
+
 gls.left[2] = {
+    FileIcon = {
+        provider = "FileIcon",
+        condition = Buffer_not_empty,
+        separator_highlight = {"NONE", colors.bg},
+        highlight = {require('galaxyline.provider_fileinfo').get_file_icon_color, colors.bg}
+    }
+}
+
+gls.left[3] = {
+    FileName = {
+        provider = "FileName",
+        separator = " ",
+        condition = Buffer_not_empty,
+        separator_highlight = {"NONE", colors.bg},
+        highlight = {colors.grey, colors.bg, 'bold'}
+    }
+}
+
+gls.left[6] = {
+    DiagnosticError = {provider = "DiagnosticError", icon = "  ", highlight = {colors.error_red, colors.bg}}
+}
+gls.left[7] = {DiagnosticWarn = {provider = "DiagnosticWarn", icon = "  ", highlight = {colors.orange, colors.bg}}}
+
+gls.left[8] = {
+    DiagnosticHint = {provider = "DiagnosticHint", icon = "  ", highlight = {colors.vivid_blue, colors.bg}}
+}
+
+gls.left[9] = {
+    DiagnosticInfo = {provider = "DiagnosticInfo", icon = "  ", highlight = {colors.info_yellow, colors.bg}}
+}
+
+gls.right[1] = {
     GitIcon = {
         provider = function()
             return " "
@@ -86,7 +135,7 @@ gls.left[2] = {
     }
 }
 
-gls.left[3] = {
+gls.right[2] = {
     GitBranch = {
         provider = "GitBranch",
         condition = condition.check_git_workspace,
@@ -96,15 +145,17 @@ gls.left[3] = {
     }
 }
 
-gls.left[4] = {
+gls.right[3] = {
     DiffAdd = {
         provider = "DiffAdd",
         condition = condition.hide_in_width,
+        separator = "  ",
         icon = "  ",
+        separator_highlight = {"NONE", colors.bg},
         highlight = {colors.green, colors.bg}
     }
 }
-gls.left[5] = {
+gls.right[4] = {
     DiffModified = {
         provider = "DiffModified",
         condition = condition.hide_in_width,
@@ -112,7 +163,7 @@ gls.left[5] = {
         highlight = {colors.blue, colors.bg}
     }
 }
-gls.left[6] = {
+gls.right[5] = {
     DiffRemove = {
         provider = "DiffRemove",
         condition = condition.hide_in_width,
@@ -121,85 +172,27 @@ gls.left[6] = {
     }
 }
 
-gls.right[1] = {
-    DiagnosticError = {provider = "DiagnosticError", icon = "  ", highlight = {colors.error_red, colors.bg}}
-}
-gls.right[2] = {DiagnosticWarn = {provider = "DiagnosticWarn", icon = "  ", highlight = {colors.orange, colors.bg}}}
-
-gls.right[3] = {
-    DiagnosticHint = {provider = "DiagnosticHint", icon = "  ", highlight = {colors.vivid_blue, colors.bg}}
-}
-
-gls.right[4] = {
-    DiagnosticInfo = {provider = "DiagnosticInfo", icon = "  ", highlight = {colors.info_yellow, colors.bg}}
-}
-
-gls.right[5] = {
-    ShowLspClient = {
-        provider = "GetLspClient",
-        condition = function()
-            local tbl = {["dashboard"] = true, [" "] = true}
-            if tbl[vim.bo.filetype] then
-                return false
-            end
-            return true
-        end,
-        icon = " ",
-        highlight = {colors.grey, colors.bg}
-    }
-}
-
 gls.right[6] = {
     LineInfo = {
         provider = "LineColumn",
-        separator = "  ",
+        separator = " ",
         separator_highlight = {"NONE", colors.bg},
         highlight = {colors.grey, colors.bg}
     }
 }
 
 gls.right[7] = {
-    PerCent = {
-        provider = "LinePercent",
-        separator = " ",
+    ShowLspClient = {
+        provider = "GetLspClient",
+        condition = Lsp_active,
+        separator = "  ",
+        icon = "  ",
         separator_highlight = {"NONE", colors.bg},
-        highlight = {colors.grey, colors.bg}
+        highlight = {colors.grey, colors.bg, 'italic'}
     }
 }
 
 gls.right[8] = {
-    Tabstop = {
-        provider = function()
-            return "Spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth") .. " "
-        end,
-        condition = condition.hide_in_width,
-        separator = " ",
-        separator_highlight = {"NONE", colors.bg},
-        highlight = {colors.grey, colors.bg}
-    }
-}
-
-gls.right[9] = {
-    BufferType = {
-        provider = "FileTypeName",
-        condition = condition.hide_in_width,
-        separator = " ",
-        separator_highlight = {"NONE", colors.bg},
-        highlight = {colors.grey, colors.bg}
-    }
-}
-
-gls.right[10] = {
-    FileEncode = {
-        provider = "FileEncode",
-        condition = condition.hide_in_width,
-        separator = " ",
-        separator_highlight = {"NONE", colors.bg},
-        highlight = {colors.grey, colors.bg}
-    }
-}
-
-gls.right[11] = {
     Space = {
         provider = function()
             return " "
