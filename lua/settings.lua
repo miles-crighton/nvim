@@ -38,9 +38,9 @@ vim.o.splitright = true -- Vertical splits will automatically be to the right
 --- Element sizing ---
 vim.o.pumheight = 10 -- Makes popup menu smaller
 vim.o.cmdheight = 1 -- More space for displaying messages
-vim.o.foldcolumn = "2" -- Left indent
+vim.o.foldcolumn = "0" -- Left indent (margin)
 vim.wo.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
-vim.o.showtabline = 2 -- Always show tabs
+vim.o.showtabline = 0 -- Always show tabs
 
 --- Scrolling ---
 vim.o.scrolloff = 8 -- Lines before scrolling

@@ -101,7 +101,7 @@ return require("packer").startup(
 
         -- Status Line and Bufferline
         use {"glepnir/galaxyline.nvim", opt = true}
-        use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
+        -- use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
 
         require_plugin("nvim-lspconfig")
         require_plugin("lspsaga.nvim")
