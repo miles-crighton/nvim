@@ -54,7 +54,9 @@ vim.api.nvim_set_keymap('n', '<Leader>h', ':set hlsearch!<CR>', {noremap = true,
 vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
 
 -- telescope
-vim.api.nvim_set_keymap('n', '<Leader>f', ':Telescope find_files<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>f',
+                        ":lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<CR>",
+                        {noremap = true, silent = true})
 
 -- dashboard
 vim.api.nvim_set_keymap('n', '<Leader>;', ':Dashboard<CR>', {noremap = true, silent = true})
@@ -73,7 +75,20 @@ local mappings = {
     ["c"] = "bd",
     ["e"] = "Explorer",
     ["f"] = "Find File",
-    ["h"] = "No Highlight",
+    ["H"] = "No Highlight",
+    h = {
+        name = "+Harpoon",
+        ["1"] = {"<cmd>lua require('harpoon.ui').nav_file(1)<cr>", "File 1"},
+        ["2"] = {"<cmd>lua require('harpoon.ui').nav_file(2)<cr>", "File 2"},
+        ["3"] = {"<cmd>lua require('harpoon.ui').nav_file(3)<cr>", "File 3"},
+        ["4"] = {"<cmd>lua require('harpoon.ui').nav_file(4)<cr>", "File 4"},
+        ["5"] = {"<cmd>lua require('harpoon.ui').nav_file(5)<cr>", "File 5"},
+        ["6"] = {"<cmd>lua require('harpoon.ui').nav_file(6)<cr>", "File 6"},
+        a = {"<cmd>lua require('harpoon.mark').add_file()<cr>", "Add file"},
+        x = {"<cmd>lua require('harpoon.mark').rm_file()<cr>", "Remove file mark"},
+        t = {"<cmd>lua require('harpoon.term').gotoTerminal(1)<cr>", "Terminal 1"},
+        m = {"<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Quick Menu"}
+    },
     d = {
         name = "+Debug",
         b = {"<cmd>DebugToggleBreakpoint<cr>", "Toggle Breakpoint"},
