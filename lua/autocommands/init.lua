@@ -14,7 +14,7 @@ if O.tsserver.autoformat then
     table.insert(auto_formatters, javascriptreact_autoformat)
     table.insert(auto_formatters, typescript_autoformat)
     table.insert(auto_formatters, typescriptreact_autoformat)
-end
+   end
 
 local lua_format = {'BufWritePre', '*.lua', 'lua vim.lsp.buf.formatting_sync()'}
 if O.lua.autoformat then table.insert(auto_formatters, lua_format) end
@@ -29,7 +29,7 @@ utils.define_augroups({
         {'BufRead', '*', 'setlocal formatoptions-=c formatoptions-=r formatoptions-=o'},
         {'BufNewFile', '*', 'setlocal formatoptions-=c formatoptions-=r formatoptions-=o'},
         {'VimLeavePre', '*', 'set title set titleold='},
-		{'CursorHold', '*', 'lua require(\'lspsaga.diagnostic\').show_cursor_diagnostics()'},
+        {'CursorHold', '*', 'lua require(\'lspsaga.diagnostic\').show_cursor_diagnostics()'},
 		-- {'CursorHold', '*', 'lua require(\'lspsaga.hover\').render_hover_doc()'}
         -- {'User', 'GoyoLeave', 'lua require(\'galaxyline\').disable_galaxyline()'},
         -- {'User', 'GoyoEnter', 'lua require(\'galaxyline\').galaxyline_augroup()'},

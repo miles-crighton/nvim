@@ -29,8 +29,8 @@ O = {
     dart = {sdk_path = '/usr/lib/dart/bin/snapshots/analysis_server.dart.snapshot'},
     lua = {
         -- @usage can be 'lua-format'
-        formatter = '',
-        autoformat = false,
+        formatter = 'lua-format',
+        autoformat = true,
         diagnostics = {virtual_text = true, signs = true, underline = true}
     },
     sh = {

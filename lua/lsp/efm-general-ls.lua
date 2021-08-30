@@ -29,19 +29,16 @@ end
 local lua_arguments = {}
 
 local luaFormat = {
-    formatCommand = "lua-format -i --no-keep-simple-function-one-line--column-limit=120",
+    formatCommand = "lua-format -i --no-keep-simple-function-one-line --column-limit=120",
     formatStdin = true
 }
 
-local lua_fmt = {
-    formatCommand = "luafmt --indent-count 2 --line-width 120 --stdin",
-    formatStdin = true
-}
+local lua_fmt = {formatCommand = "luafmt --indent-count 2 --line-width 120 --stdin", formatStdin = true}
 
 if O.lua.formatter == 'lua-format' then
-  table.insert(lua_arguments, luaFormat)
+    table.insert(lua_arguments, luaFormat)
 elseif O.lua.formatter == 'lua-fmt' then
-  table.insert(lua_arguments, lua_fmt)
+    table.insert(lua_arguments, lua_fmt)
 end
 
 -- sh
@@ -60,11 +57,9 @@ if O.sh.linter == 'shellcheck' then table.insert(sh_arguments, shellcheck) end
 
 -- tsserver/web javascript react, vue, json, html, css, yaml
 local prettierd = {
-  formatCommand = 'prettierd ${INPUT}',
-  formatStdin = true,
-  env = {
-    'PRETTIERD_DEFAULT_CONFIG=~/.config/nvim/utils/linter-config/.prettierrc.json',
-  }
+    formatCommand = 'prettierd ${INPUT}',
+    formatStdin = true,
+    env = {'PRETTIERD_DEFAULT_CONFIG=~/.config/nvim/utils/linter-config/.prettierrc.json'}
 }
 -- You can look for project scope Prettier and Eslint with e.g. vim.fn.glob("node_modules/.bin/prettier") etc. If it is not found revert to global Prettier where needed.
 -- local prettier = {formatCommand = "./node_modules/.bin/prettier --stdin-filepath ${INPUT}", formatStdin = true}
@@ -98,7 +93,10 @@ require"lspconfig".efm.setup {
     -- init_options = {initializationOptions},
     cmd = {DATA_PATH .. "/lspinstall/efm/efm-langserver"},
     init_options = {documentFormatting = true, codeAction = false},
-    filetypes = {"lua", "python", "javascriptreact", "javascript", "typescript","typescriptreact","sh", "html", "css", "json", "yaml", "markdown", "vue"},
+    filetypes = {
+        "lua", "python", "javascriptreact", "javascript", "typescript", "typescriptreact", "sh", "html", "css", "json",
+        "yaml", "markdown", "vue"
+    },
     settings = {
         rootMarkers = {".git/"},
         languages = {
