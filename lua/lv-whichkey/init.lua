@@ -144,7 +144,10 @@ local mappings = {
         M = {"<cmd>Telescope man_pages<cr>", "Man Pages"},
         r = {"<cmd>Telescope oldfiles<cr>", "Open Recent File"},
         R = {"<cmd>Telescope registers<cr>", "Registers"},
-        t = {"<cmd>Telescope live_grep<cr>", "Text"}
+        t = {
+            "<cmd>:lua require('telescope.builtin').live_grep({vimgrep_arguments={'rg', '--hidden', '-g', '!.git', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case' }})<cr>",
+            "Text"
+        }
     },
     S = {name = "+Session", s = {"<cmd>SessionSave<cr>", "Save Session"}, l = {"<cmd>SessionLoad<cr>", "Load Session"}}
 }
