@@ -103,7 +103,13 @@ return require("packer").startup(function(use)
     use "kevinhwang91/rnvimr"
 
     -- use {'lukas-reineke/indent-blankline.nvim', opt=true, branch = 'lua'}
-    use {"lewis6991/gitsigns.nvim", opt = true}
+    use {
+        "lewis6991/gitsigns.nvim",
+        event = "BufRead",
+        config = function()
+            require("plugins.gitsigns").setup()
+        end
+    }
     use {"folke/which-key.nvim", opt = true}
     use {"ChristianChiarulli/dashboard-nvim", opt = true}
     use {"windwp/nvim-autopairs", opt = true}
