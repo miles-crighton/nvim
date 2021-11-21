@@ -58,10 +58,11 @@ return require("packer").startup(function(use)
     use 'metakirby5/codi.vim'
 
     use "folke/tokyonight.nvim"
+    use "styled-components/vim-styled-components"
 
     -- TODO refactor all of this (for now it works, but yes I know it could be wrapped in a simpler function)
     use {"neovim/nvim-lspconfig", opt = true}
-    use {"glepnir/lspsaga.nvim", opt = true}
+    use {"rinx/lspsaga.nvim", opt = true}
     use {
         "kabouzeid/nvim-lspinstall",
         config = function()

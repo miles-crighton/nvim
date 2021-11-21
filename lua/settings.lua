@@ -21,8 +21,8 @@ vim.o.hidden = O.hidden_files -- Required to keep multiple buffers open multiple
 --- Terminal Title ---
 vim.o.title = true
 TERMINAL = vim.fn.expand('$TERMINAL')
-vim.cmd('let &titleold="'..TERMINAL..'"')
-vim.o.titlestring="%<%F%=%l/%L - nvim"
+vim.cmd('let &titleold="' .. TERMINAL .. '"')
+vim.o.titlestring = "%<%F%= - nvim"
 
 --- Tab/Space inserts ---
 vim.cmd('set ts=2') -- Insert 2 spaces for a tab
