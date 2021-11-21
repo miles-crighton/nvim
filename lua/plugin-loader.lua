@@ -1,3 +1,5 @@
+vim.cmd "autocmd BufWritePost plugin-loader.lua PackerCompile" -- Auto compile when there are changes in plugins.lua
+
 local plugin_loader = {}
 
 local _, packer = pcall(require, "packer")

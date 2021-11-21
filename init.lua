@@ -13,12 +13,10 @@ require('colorscheme')
 require('plugins/galaxyline')
 require('plugins/comment')
 require('plugins/compe')
-require('plugins/telescope')
 require('plugins/nvimtree')
 require('plugins/treesitter')
 require('plugins/autopairs')
 -- require('rnvimr')
-require('plugins/diffview')
 require('plugins/whichkey')
 
 -- NOTE: Been disabled, remove if no changes occur

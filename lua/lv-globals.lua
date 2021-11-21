@@ -24,7 +24,7 @@ O = {
         formatter = '',
         autoformat = false,
         isort = false,
-        diagnostics = {virtual_text = true, signs = true, underline= true}
+        diagnostics = {virtual_text = true, signs = true, underline = true}
     },
     dart = {sdk_path = '/usr/lib/dart/bin/snapshots/analysis_server.dart.snapshot'},
     lua = {
@@ -57,10 +57,7 @@ O = {
     },
     tailwindls = {filetypes = {'html', 'css', 'scss', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact'}},
     clang = {diagnostics = {virtual_text = true, signs = true, underline = true}},
-	ruby = {
-		diagnostics = {virtualtext = true, signs = true, underline = true},
-		filetypes = {'rb', 'erb', 'rakefile'}
-	}
+    ruby = {diagnostics = {virtualtext = true, signs = true, underline = true}, filetypes = {'rb', 'erb', 'rakefile'}}
     -- css = {formatter = '', autoformat = false, virtual_text = true},
     -- json = {formatter = '', autoformat = false, virtual_text = true}
 }

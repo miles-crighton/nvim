@@ -1,13 +1,17 @@
-vim.cmd "autocmd BufWritePost plugins.lua PackerCompile" -- Auto compile when there are changes in plugins.lua
+vim.cmd "autocmd BufWritePost plugin-config.lua PackerCompile" -- Auto compile when there are changes in plugins.lua
 
 return {
-    {"nvim-lua/plenary.nvim"},
-    -- Packer can manage itself as an optional plugin
     {"wbthomason/packer.nvim"}, -- Currently doesn't work https://github.com/wbthomason/packer.nvim/issues/180
+    {"nvim-lua/plenary.nvim"}, -- Packer can manage itself as an optional plugin
     -- {'lewis6991/impatient.nvim', rocks = 'mpack'}
     -- Icons
     {"kyazdani42/nvim-web-devicons", opt = true}, -- Git integration
-    {"tpope/vim-fugitive"}, {"APZelos/blamer.nvim"}, {'sindrets/diffview.nvim'}, {"TimUntersberger/neogit"}, {
+    {"tpope/vim-fugitive"}, {"APZelos/blamer.nvim"}, {
+        'sindrets/diffview.nvim',
+        config = function()
+            require("plugins.diffview").setup()
+        end
+    }, {"TimUntersberger/neogit"}, {
         "kdheepak/lazygit.nvim", {
             "folke/lsp-trouble.nvim",
             config = function()
@@ -18,17 +22,18 @@ return {
     {"styled-components/vim-styled-components"},
 
     -- TODO refactor all of this (for now it works, but yes I know it could be wrapped in a simpler function)
-    {"neovim/nvim-lspconfig", opt = true}, 
-  {"rinx/lspsaga.nvim", opt = true}, {
+    {"neovim/nvim-lspconfig", opt = true}, {"rinx/lspsaga.nvim", opt = true}, {
         "kabouzeid/nvim-lspinstall",
         config = function()
             require("lspinstall").setup {}
         end,
         opt = true
-    },
-    {"nvim-lua/popup.nvim", opt = true}, 
-    {"nvim-telescope/telescope.nvim", opt = true}, 
-    {"nvim-telescope/telescope-fzy-native.nvim", opt = true}, -- Harpoon
+    }, {"nvim-lua/popup.nvim", opt = true}, {
+        "nvim-telescope/telescope.nvim",
+        config = function()
+            require("plugins.telescope").setup()
+        end
+    }, {"nvim-telescope/telescope-fzy-native.nvim", opt = true}, -- Harpoon
     {
         "ThePrimeagen/harpoon",
         config = function()
@@ -52,5 +57,5 @@ return {
     {"windwp/nvim-autopairs", opt = true}, {"terrortylor/nvim-comment", opt = true},
     {"kevinhwang91/nvim-bqf", opt = true}, -- Color
     {"christianchiarulli/nvcode-color-schemes.vim", opt = true}, -- Status Line and Bufferline
-    {"glepnir/galaxyline.nvim"},
+    {"glepnir/galaxyline.nvim"}
 }
