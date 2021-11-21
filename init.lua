@@ -1,6 +1,10 @@
 require('lv-globals')
-require('plugins')
+
+local plugins = require "plugin-config"
+require("plugin-loader").load {plugins}
+
 vim.cmd('luafile ~/.config/nvim/lv-settings.lua')
+
 require('settings')
 require('lv-utils')
 require('autocommands')
@@ -17,8 +21,8 @@ require('plugins/autopairs')
 require('plugins/diffview')
 require('plugins/whichkey')
 
--- Which Key (Hope to replace with Lua plugin someday)
-vim.cmd('source ~/.config/nvim/vimscript/functions.vim')
+-- NOTE: Been disabled, remove if no changes occur
+-- vim.cmd('source ~/.config/nvim/vimscript/functions.vim')
 
 -- LSP
 require('lsp')
