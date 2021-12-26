@@ -16,13 +16,9 @@ return {
     {"styled-components/vim-styled-components"},
 
     -- TODO refactor all of this (for now it works, but yes I know it could be wrapped in a simpler function)
-    {"neovim/nvim-lspconfig"}, {"rinx/lspsaga.nvim"}, {
-        "kabouzeid/nvim-lspinstall",
-        config = function()
-            require("lspinstall").setup {}
-        end
-    }, {"nvim-lua/popup.nvim"}, {
+    {"neovim/nvim-lspconfig"}, {"rinx/lspsaga.nvim"}, {"williamboman/nvim-lsp-installer"}, {"nvim-lua/popup.nvim"}, {
         "nvim-telescope/telescope.nvim",
+        commit = "991d0127f0abc6db9d8efd3a49e53a6867de5559",
         config = function()
             require("plugins.telescope").setup()
         end
