@@ -29,6 +29,9 @@ local key_maps = {
         normal_mode = {
             ["<Space>"] = '<NOP>',
 
+            -- Comments
+            ["<leader>/"] = ':CommentToggle<CR>',
+
             -- Better window movement
             ["<C-h>"] = "<C-w>h",
             ["<C-j>"] = "<C-w>j",
@@ -94,7 +97,10 @@ local key_maps = {
         visual_mode = {
             -- Better indenting
             ["<"] = "<gv",
-            [">"] = ">gv"
+            [">"] = ">gv",
+
+            -- Comments
+            ["<leader>/"] = ':CommentToggle<CR>'
         },
 
         visual_block_mode = {

@@ -34,7 +34,7 @@ return {
         end
     }, -- Debugging
     {"mfussenegger/nvim-dap"}, -- Autocomplete
-    {"hrsh7th/nvim-compe"}, {"hrsh7th/vim-vsnip"}, {"rafamadriz/friendly-snippets"}, -- Treesitter
+    {"hrsh7th/nvim-compe"}, {"rafamadriz/friendly-snippets"}, -- Treesitter
     {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}, {"windwp/nvim-ts-autotag"}, -- Explorer
     {"kyazdani42/nvim-tree.lua"}, -- TODO remove when open on dir is supported by nvimtree
     {"kevinhwang91/rnvimr"}, -- {'lukas-reineke/indent-blankline.nvim', opt=true, branch = 'lua'}
@@ -44,8 +44,12 @@ return {
         config = function()
             require("plugins.gitsigns").setup()
         end
-    }, {"folke/which-key.nvim"}, {"ChristianChiarulli/dashboard-nvim"}, {"windwp/nvim-autopairs"},
-    {"terrortylor/nvim-comment"}, {"kevinhwang91/nvim-bqf"}, -- Color
+    }, {"folke/which-key.nvim"}, {"ChristianChiarulli/dashboard-nvim"}, {"windwp/nvim-autopairs"}, {
+        "terrortylor/nvim-comment",
+        config = function()
+            require('nvim_comment').setup()
+        end
+    }, {"kevinhwang91/nvim-bqf"}, -- Color
     {"christianchiarulli/nvcode-color-schemes.vim"}, -- Status Line and Bufferline
     {"glepnir/galaxyline.nvim"}
 }
