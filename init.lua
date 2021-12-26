@@ -3,8 +3,6 @@ require('lv-globals')
 local plugins = require "plugin-config"
 require("plugin-loader").load {plugins}
 
-vim.cmd('luafile ~/.config/nvim/lv-settings.lua')
-
 require('settings')
 require('autocommands')
 require('keymaps').setup()

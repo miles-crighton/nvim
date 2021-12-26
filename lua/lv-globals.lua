@@ -1,9 +1,6 @@
 O = {
-    auto_close_tree = 0,
-    auto_complete = true,
-    colorscheme = 'lunar',
+    colorscheme = 'tokyonight',
     hidden_files = true,
-    wrap_lines = false,
     number = true,
     relative_number = true,
     shell = 'bash',
@@ -21,9 +18,9 @@ O = {
     python = {
         linter = '',
         -- @usage can be 'yapf', 'black'
-        formatter = '',
-        autoformat = false,
-        isort = false,
+        formatter = 'yapf',
+        autoformat = true,
+        isort = true,
         diagnostics = {virtual_text = true, signs = true, underline = true}
     },
     dart = {sdk_path = '/usr/lib/dart/bin/snapshots/analysis_server.dart.snapshot'},
@@ -43,20 +40,20 @@ O = {
     },
     tsserver = {
         -- @usage can be 'eslint'
-        linter = '',
+        linter = 'eslint',
         -- @usage can be 'prettier'
-        formatter = '',
-        autoformat = false,
+        formatter = 'prettier',
+        autoformat = true,
         diagnostics = {virtual_text = true, signs = true, underline = true}
     },
     json = {
         -- @usage can be 'prettier'
-        formatter = '',
-        autoformat = false,
+        formatter = 'prettier',
+        autoformat = true,
         diagnostics = {virtual_text = true, signs = true, underline = true}
     },
     tailwindls = {filetypes = {'html', 'css', 'scss', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact'}},
-    clang = {diagnostics = {virtual_text = true, signs = true, underline = true}},
+    clang = {diagnostics = {virtual_text = false, signs = false, underline = false}},
     ruby = {diagnostics = {virtualtext = true, signs = true, underline = true}, filetypes = {'rb', 'erb', 'rakefile'}}
     -- css = {formatter = '', autoformat = false, virtual_text = true},
     -- json = {formatter = '', autoformat = false, virtual_text = true}

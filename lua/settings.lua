@@ -14,7 +14,7 @@ vim.o.backup = false -- This is recommended by coc
 vim.o.writebackup = false -- This is recommended by coc
 
 --- Line Wrapping ---
-vim.wo.wrap = O.wrap_lines -- Display long lines as just one line
+vim.wo.wrap = false -- Display long lines as just one line
 vim.cmd('set whichwrap+=<,>,[,]') -- move to next line with theses keys
 vim.o.hidden = O.hidden_files -- Required to keep multiple buffers open multiple buffers
 
