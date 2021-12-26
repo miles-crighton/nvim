@@ -6,7 +6,6 @@ require("plugin-loader").load {plugins}
 vim.cmd('luafile ~/.config/nvim/lv-settings.lua')
 
 require('settings')
-require('lv-utils')
 require('autocommands')
 require('keymaps').setup()
 require('colorscheme')
