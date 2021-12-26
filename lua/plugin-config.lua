@@ -31,7 +31,13 @@ return {
     }, -- Debugging
     {"mfussenegger/nvim-dap"}, -- Autocomplete
     {"hrsh7th/nvim-compe"}, {"rafamadriz/friendly-snippets"}, -- Treesitter
-    {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}, {"windwp/nvim-ts-autotag"}, -- Explorer
+    {
+        "nvim-treesitter/nvim-treesitter",
+        run = ":TSUpdate",
+        config = function()
+            require("plugins.treesitter").setup()
+        end
+    }, {"windwp/nvim-ts-autotag"}, -- Explorer
     {"kyazdani42/nvim-tree.lua"}, -- TODO remove when open on dir is supported by nvimtree
     {"kevinhwang91/rnvimr"}, -- {'lukas-reineke/indent-blankline.nvim', opt=true, branch = 'lua'}
     {

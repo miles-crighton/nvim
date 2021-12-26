@@ -13,12 +13,7 @@ require('colorscheme')
 require('plugins/galaxyline')
 require('plugins/compe')
 require('plugins/nvimtree')
-require('plugins/treesitter')
--- require('rnvimr')
 require('plugins/whichkey')
-
--- NOTE: Been disabled, remove if no changes occur
--- vim.cmd('source ~/.config/nvim/vimscript/functions.vim')
 
 -- LSP
 require('lsp')
