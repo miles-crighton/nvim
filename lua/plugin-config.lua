@@ -38,8 +38,12 @@ return {
             require("plugins.treesitter").setup()
         end
     }, {"windwp/nvim-ts-autotag"}, -- Explorer
-    {"kyazdani42/nvim-tree.lua"}, -- TODO remove when open on dir is supported by nvimtree
-    {"kevinhwang91/rnvimr"}, -- {'lukas-reineke/indent-blankline.nvim', opt=true, branch = 'lua'}
+    {
+        "kyazdani42/nvim-tree.lua",
+        config = function()
+            require("plugins.nvimtree").setup()
+        end
+    }, {"kevinhwang91/rnvimr"}, -- {'lukas-reineke/indent-blankline.nvim', opt=true, branch = 'lua'}
     {
         "lewis6991/gitsigns.nvim",
         event = "BufRead",
