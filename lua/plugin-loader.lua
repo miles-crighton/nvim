@@ -14,7 +14,7 @@ end
 vim.cmd [[
   augroup packer_user_config
     autocmd!
-    autocmd BufWritePost plugins-config.lua source <afile> | PackerSync
+    autocmd BufWritePost plugins-config.lua source <afile> | PackerSync!
     autocmd BufWritePost plugins-loader.lua source <afile> | PackerSync
   augroup end
 ]]
