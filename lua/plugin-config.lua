@@ -40,7 +40,12 @@ return {
         config = function()
             require("plugins.gitsigns").setup()
         end
-    }, {"folke/which-key.nvim"}, {"ChristianChiarulli/dashboard-nvim"}, {"windwp/nvim-autopairs"}, {
+    }, {"folke/which-key.nvim"}, {"ChristianChiarulli/dashboard-nvim"}, {
+        "windwp/nvim-autopairs",
+        config = function()
+            require("plugins.autopairs").setup()
+        end
+    }, {
         "terrortylor/nvim-comment",
         config = function()
             require('nvim_comment').setup()

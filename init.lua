@@ -14,7 +14,6 @@ require('plugins/galaxyline')
 require('plugins/compe')
 require('plugins/nvimtree')
 require('plugins/treesitter')
-require('plugins/autopairs')
 -- require('rnvimr')
 require('plugins/whichkey')
 
