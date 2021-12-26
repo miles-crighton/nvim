@@ -1,12 +1,6 @@
-vim.cmd "autocmd BufWritePost plugin-config.lua PackerCompile" -- Auto compile when there are changes in plugins.lua
-
 return {
     {"wbthomason/packer.nvim"}, -- Currently doesn't work https://github.com/wbthomason/packer.nvim/issues/180
-    {"nvim-lua/plenary.nvim"}, -- Packer can manage itself as an optional plugin
-    -- {'lewis6991/impatient.nvim', rocks = 'mpack'}
-    -- Icons
-    {"kyazdani42/nvim-web-devicons"}, -- Git integration
-    {"tpope/vim-fugitive"}, {"APZelos/blamer.nvim"}, {
+    {"nvim-lua/plenary.nvim"}, {"kyazdani42/nvim-web-devicons"}, {"tpope/vim-fugitive"}, {"APZelos/blamer.nvim"}, {
         'sindrets/diffview.nvim',
         config = function()
             require("plugins.diffview").setup()
