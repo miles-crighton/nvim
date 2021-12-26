@@ -80,7 +80,19 @@ local key_maps = {
             ['<C-ENTER>'] = ':set paste<CR>m`O<Esc>``:set nopaste<CR>',
 
             -- Re-source config
-            ['<Leader>ss'] = {':luafile $MYVIMRC<CR>', {noremap = true}}
+            ['<Leader>ss'] = {':luafile $MYVIMRC<CR>', {noremap = true}},
+
+            -- Telescope
+            ['<Leader>f'] = ":lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<CR>",
+
+            -- Nvimtree
+            ['<Leader>e'] = ":NvimTreeToggle<CR>",
+
+            -- Buffers
+            ['<Leader>c'] = ':BufferClose<CR>',
+
+            -- Highlights
+            ['<Leader>h'] = ':set hlsearch!<CR>'
         },
 
         term_mode = {
