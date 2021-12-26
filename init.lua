@@ -13,7 +13,6 @@ require('colorscheme')
 require('plugins/galaxyline')
 require('plugins/compe')
 require('plugins/nvimtree')
-require('plugins/whichkey')
 
 -- LSP
 require('lsp')

@@ -46,7 +46,12 @@ return {
         config = function()
             require("plugins.gitsigns").setup()
         end
-    }, {"folke/which-key.nvim"}, {"ChristianChiarulli/dashboard-nvim"}, {
+    }, {
+        "folke/which-key.nvim",
+        config = function()
+            require("plugins.whichkey").setup()
+        end
+    }, {"ChristianChiarulli/dashboard-nvim"}, {
         "windwp/nvim-autopairs",
         config = function()
             require("plugins.autopairs").setup()

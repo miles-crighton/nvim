@@ -1,4 +1,6 @@
-require("which-key").setup {
+local M = {}
+
+M.config = {
     plugins = {
         marks = true, -- shows a list of your marks on ' and `
         registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
@@ -34,7 +36,7 @@ require("which-key").setup {
     show_help = true -- show help message on the command line when the popup is visible
 }
 
-local opts = {
+M.opts = {
     mode = "n", -- NORMAL mode
     prefix = "<leader>",
     buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
@@ -43,7 +45,7 @@ local opts = {
     nowait = false -- use `nowait` when creating keymaps
 }
 
-local mappings = {
+M.mappings = {
     ["/"] = "Comment",
     ["c"] = "bd",
     ["e"] = "Explorer",
@@ -125,5 +127,11 @@ local mappings = {
     S = {name = "+Session", s = {"<cmd>SessionSave<cr>", "Save Session"}, l = {"<cmd>SessionLoad<cr>", "Load Session"}}
 }
 
-local wk = require("which-key")
-wk.register(mappings, opts)
+M.setup = function()
+    local wk = require("which-key")
+
+    wk.setup(M.config)
+    wk.register(M.mappings, M.opts)
+end
+
+return M
