@@ -16,7 +16,7 @@ vim.o.writebackup = false -- This is recommended by coc
 --- Line Wrapping ---
 vim.wo.wrap = false -- Display long lines as just one line
 vim.cmd('set whichwrap+=<,>,[,]') -- move to next line with theses keys
-vim.o.hidden = O.hidden_files -- Required to keep multiple buffers open multiple buffers
+vim.o.hidden = true -- Required to keep multiple buffers open multiple buffers
 
 --- Terminal Title ---
 vim.o.title = true
@@ -57,8 +57,8 @@ vim.wo.cursorline = true -- Enable highlighting of the current line
 vim.cmd('syntax on')
 
 --- Line numbers
-vim.wo.number = O.number -- set numbered line2
-vim.wo.relativenumber = O.relative_number -- set relative number
+vim.wo.number = true -- set numbered line2
+vim.wo.relativenumber = true -- set relative number
 
 --- Copy + Paste ---
 vim.o.clipboard = "unnamedplus" -- Copy paste between vim and everything else

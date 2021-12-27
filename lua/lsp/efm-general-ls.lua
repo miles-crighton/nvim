@@ -41,9 +41,7 @@ elseif O.lua.formatter == 'lua-fmt' then
     table.insert(lua_arguments, lua_fmt)
 end
 
--- sh
-local sh_arguments = {}
-
+-- shell
 local shfmt = {formatCommand = 'shfmt -ci -s -bn', formatStdin = true}
 
 local shellcheck = {
@@ -51,19 +49,15 @@ local shellcheck = {
     lintFormats = {'%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m', '%f:%l:%c: %tote: %m'}
 }
 
-if O.sh.formatter == 'shfmt' then table.insert(sh_arguments, shfmt) end
-
-if O.sh.linter == 'shellcheck' then table.insert(sh_arguments, shellcheck) end
-
 -- tsserver/web javascript react, vue, json, html, css, yaml
 local prettierd = {
     formatCommand = 'prettierd ${INPUT}',
     formatStdin = true,
     env = {'PRETTIERD_DEFAULT_CONFIG=~/.config/nvim/utils/linter-config/.prettierrc.json'}
 }
+
 -- You can look for project scope Prettier and Eslint with e.g. vim.fn.glob("node_modules/.bin/prettier") etc. If it is not found revert to global Prettier where needed.
 -- local prettier = {formatCommand = "./node_modules/.bin/prettier --stdin-filepath ${INPUT}", formatStdin = true}
-
 local eslint = {
     lintCommand = "./node_modules/.bin/eslint -f unix --stdin --stdin-filename ${INPUT}",
     lintIgnoreExitCode = true,
@@ -102,7 +96,7 @@ require"lspconfig".efm.setup {
         languages = {
             python = python_arguments,
             lua = lua_arguments,
-            sh = sh_arguments,
+            sh = {shellcheck},
             javascript = tsserver_args,
             javascriptreact = tsserver_args,
             typescript = tsserver_args,

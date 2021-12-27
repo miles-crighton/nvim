@@ -1,6 +1,6 @@
 vim.cmd('let g:nvcode_termcolors=256')
 
-vim.cmd('colorscheme ' .. O.colorscheme)
+vim.cmd('colorscheme ' .. "tokyonight")
 
 -- Change diff colors for reduced contrast
 vim.cmd('hi DiffAdd gui=NONE guifg=NONE guibg=#3d4543')
