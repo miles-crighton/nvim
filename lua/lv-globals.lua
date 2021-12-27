@@ -5,23 +5,13 @@ O = {
     relative_number = true,
     shell = 'bash',
 
-    -- @usage pass a table with your desired languages
-    treesitter = {
-        ensure_installed = "all",
-        ignore_install = {"haskell"},
-        highlight = {enabled = true},
-        playground = {enabled = true},
-        rainbow = {enabled = false}
-    },
-
     database = {save_location = '~/.config/nvcode_db', auto_execute = 1},
     python = {
         linter = '',
         -- @usage can be 'yapf', 'black'
         formatter = 'yapf',
         autoformat = true,
-        isort = true,
-        diagnostics = {virtual_text = true, signs = true, underline = true}
+        isort = true
     },
     dart = {sdk_path = '/usr/lib/dart/bin/snapshots/analysis_server.dart.snapshot'},
     lua = {
