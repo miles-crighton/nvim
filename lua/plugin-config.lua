@@ -12,8 +12,8 @@ return {
                 require("trouble").setup {}
             end
         }
-    }, {"sbdchd/neoformat"}, {"drewtempelmeyer/palenight.vim"}, {'metakirby5/codi.vim', "folke/tokyonight.nvim"},
-    {"styled-components/vim-styled-components"},
+    }, {"sbdchd/neoformat"}, {"drewtempelmeyer/palenight.vim"}, {'metakirby5/codi.vim'}, {"folke/tokyonight.nvim"},
+    {"rebelot/kanagawa.nvim"}, {"styled-components/vim-styled-components"},
 
     -- TODO refactor all of this (for now it works, but yes I know it could be wrapped in a simpler function)
     {"neovim/nvim-lspconfig"}, {"rinx/lspsaga.nvim"}, {"williamboman/nvim-lsp-installer"}, {"nvim-lua/popup.nvim"}, {
