@@ -67,5 +67,10 @@ return {
         end
     }, {"kevinhwang91/nvim-bqf"}, -- Color
     {"christianchiarulli/nvcode-color-schemes.vim"}, -- Status Line and Bufferline
-    {"glepnir/galaxyline.nvim"}
+    {
+        'nvim-lualine/lualine.nvim',
+        config = function()
+            require("plugins.lualine").setup()
+        end
+    }
 }

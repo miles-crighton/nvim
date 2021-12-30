@@ -7,7 +7,6 @@ require('settings')
 require('autocommands')
 require('keymaps').setup()
 require('colorscheme')
-require('plugins/galaxyline')
 require('plugins/compe')
 require('plugins/nvimtree')
 
