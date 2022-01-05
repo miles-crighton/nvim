@@ -1,7 +1,18 @@
 return {
-	{ "wbthomason/packer.nvim" }, -- Currently doesn't work https://github.com/wbthomason/packer.nvim/issues/180
+	-- Misc
+	{ "wbthomason/packer.nvim" },
 	{ "nvim-lua/plenary.nvim" },
 	{ "kyazdani42/nvim-web-devicons" },
+	{ "metakirby5/codi.vim" },
+
+	-- Git
+	{
+		"lewis6991/gitsigns.nvim",
+		event = "BufRead",
+		config = function()
+			require("plugins.gitsigns").setup()
+		end,
+	},
 	{ "tpope/vim-fugitive" },
 	{ "APZelos/blamer.nvim" },
 	{
@@ -13,25 +24,11 @@ return {
 	{ "TimUntersberger/neogit" },
 	{
 		"kdheepak/lazygit.nvim",
-		{
-			"folke/lsp-trouble.nvim",
-			config = function()
-				require("trouble").setup({})
-			end,
-		},
 	},
-	{
-		"tami5/lspsaga.nvim",
-		config = function()
-			require("lspsaga").init_lsp_saga()
-		end,
-	},
-	{ "sbdchd/neoformat" },
-	{ "drewtempelmeyer/palenight.vim" },
-	{ "metakirby5/codi.vim" },
 
 	-- Themes
 	{ "folke/tokyonight.nvim" },
+	{ "drewtempelmeyer/palenight.vim" },
 	{ "rebelot/kanagawa.nvim" },
 	{ "styled-components/vim-styled-components" },
 
@@ -40,6 +37,22 @@ return {
 	"williamboman/nvim-lsp-installer", -- simple to use language server installer
 	"tamago324/nlsp-settings.nvim", -- language server settings defined in json for
 	"jose-elias-alvarez/null-ls.nvim",
+
+	-- LSP utils
+	{
+		"folke/lsp-trouble.nvim",
+		config = function()
+			require("trouble").setup({})
+		end,
+	},
+	{
+		"tami5/lspsaga.nvim",
+		config = function()
+			require("lspsaga").init_lsp_saga()
+		end,
+	},
+
+	-- Navigation
 	{
 		"nvim-telescope/telescope.nvim",
 		commit = "991d0127f0abc6db9d8efd3a49e53a6867de5559",
@@ -53,8 +66,12 @@ return {
 		config = function()
 			require("harpoon").setup({ global_settings = { save_on_toggle = false, save_on_change = true } })
 		end,
-	}, -- Debugging
-	{ "mfussenegger/nvim-dap" }, -- Autocomplete
+	},
+
+	-- Debugging
+	{ "mfussenegger/nvim-dap" },
+
+	-- Autocomplete & Snippits
 	{
 		"hrsh7th/nvim-cmp",
 		config = function()
@@ -70,7 +87,9 @@ return {
 			"saadparwaiz1/cmp_luasnip",
 		},
 	},
-	{ "rafamadriz/friendly-snippets" }, -- Treesitter
+	{ "rafamadriz/friendly-snippets" },
+
+	-- Code utils
 	{
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
@@ -78,28 +97,6 @@ return {
 			require("plugins.treesitter").setup()
 		end,
 	},
-	{ "windwp/nvim-ts-autotag" }, -- Explorer
-	{
-		"kyazdani42/nvim-tree.lua",
-		config = function()
-			require("plugins.nvimtree").setup()
-		end,
-	},
-	{ "kevinhwang91/rnvimr" }, -- {'lukas-reineke/indent-blankline.nvim', opt=true, branch = 'lua'}
-	{
-		"lewis6991/gitsigns.nvim",
-		event = "BufRead",
-		config = function()
-			require("plugins.gitsigns").setup()
-		end,
-	},
-	{
-		"folke/which-key.nvim",
-		config = function()
-			require("plugins.whichkey").setup()
-		end,
-	},
-	{ "ChristianChiarulli/dashboard-nvim" },
 	{
 		"windwp/nvim-autopairs",
 		config = function()
@@ -112,12 +109,26 @@ return {
 			require("nvim_comment").setup()
 		end,
 	},
-	{ "kevinhwang91/nvim-bqf" }, -- Color
-	{ "christianchiarulli/nvcode-color-schemes.vim" }, -- Status Line and Bufferline
+	{ "windwp/nvim-ts-autotag" },
+
+	-- UI
+	{ "kevinhwang91/nvim-bqf" },
+	{
+		"kyazdani42/nvim-tree.lua",
+		config = function()
+			require("plugins.nvimtree").setup()
+		end,
+	},
 	{
 		"nvim-lualine/lualine.nvim",
 		config = function()
 			require("plugins.lualine").setup()
+		end,
+	},
+	{
+		"folke/which-key.nvim",
+		config = function()
+			require("plugins.whichkey").setup()
 		end,
 	},
 }
