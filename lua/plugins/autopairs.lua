@@ -94,13 +94,14 @@ M.setup = function()
         Rule("$", "$", "lua"):with_pair(ts_conds.is_not_ts_node {"function"})
     }
 
+    -- Autocompletion and snippets
+    -- These were causing error, don't seem to appear in docs
+    -- vim.api.nvim_set_keymap('i', '<CR>', ':lua require "nvim-autopairs".autopairs_cr()', {expr = true, noremap = true})
+    -- imap("<CR>", "require(\'lua.plugins.autopairs\').completion_confirm()<CR>", {expr = true, noremap = true})
+    -- imap("<Tab>", "v:lua.MUtils.tab()", {expr = true, noremap = true})
+    -- imap("<S-Tab>", "v:lua.MUtils.s_tab()", {expr = true, noremap = true})
+
     if M.config.on_config_done then M.config.on_config_done(autopairs) end
 end
-
--- Autocompletion and snippets
-vim.api.nvim_set_keymap('i', '<CR>', 'v:lua.MUtils.completion_confirm()', {expr = true, noremap = true})
--- imap("<CR>", "v:lua.MUtils.completion_confirm()", {expr = true, noremap = true})
-imap("<Tab>", "v:lua.MUtils.tab()", {expr = true, noremap = true})
-imap("<S-Tab>", "v:lua.MUtils.s_tab()", {expr = true, noremap = true})
 
 return M

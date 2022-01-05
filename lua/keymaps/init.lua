@@ -39,8 +39,8 @@ local key_maps = {
             ["<C-l>"] = "<C-w>l",
 
             -- Lsp
-            ['K'] = ':lua require(\'lspsaga.hover\').render_hover_doc()<CR>',
-            ['gs'] = ':lua require(\'lspsaga.signaturehelp\').signature_help()<CR>',
+            -- ['K'] = ':lua require(\'lspsaga.hover\').render_hover_doc()<CR>',
+            -- ['gs'] = ':lua require(\'lspsaga.signaturehelp\').signature_help()<CR>',
 
             -- Make Y work like D
             ['Y'] = 'y$',

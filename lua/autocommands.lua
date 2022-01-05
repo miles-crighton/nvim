@@ -27,7 +27,7 @@ define_augroups({
         {'BufRead', '*', 'setlocal formatoptions-=c formatoptions-=r formatoptions-=o'},
         {'BufNewFile', '*', 'setlocal formatoptions-=c formatoptions-=r formatoptions-=o'},
         {'VimLeavePre', '*', 'set title set titleold='},
-        {'CursorHold', '*', 'lua require(\'lspsaga.diagnostic\').show_cursor_diagnostics()'}
+        -- {'CursorHold', '*', 'lua require(\'lspsaga.diagnostic\').show_cursor_diagnostics()'}
     },
     _java = {
         {'FileType', 'java', 'luafile ~/.config/nvim/lua/lsp/java-ls.lua'},

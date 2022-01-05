@@ -12,6 +12,7 @@ vim.o.conceallevel = 0 -- So that I can see `` in markdown files
 vim.o.showmode = false -- We don't need to see things like -- INSERT -- anymore
 vim.o.backup = false -- This is recommended by coc
 vim.o.writebackup = false -- This is recommended by coc
+vim.o.completeopt = 'menu,menuone,noselect'
 
 --- Line Wrapping ---
 vim.wo.wrap = false -- Display long lines as just one line

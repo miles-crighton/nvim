@@ -13,6 +13,8 @@ M.config = function(tree_cb)
         update_focused_file = {enable = true},
         hijack_cursor = true,
         quit_on_open = 0,
+        git = {enable = true, ignore = true, timeout = 501},
+        filters = {dotfiles = false, custom = {}},
         view = {
             width = 30,
             mappings = {

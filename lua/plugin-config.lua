@@ -16,7 +16,11 @@ return {
     {"rebelot/kanagawa.nvim"}, {"styled-components/vim-styled-components"},
 
     -- TODO refactor all of this (for now it works, but yes I know it could be wrapped in a simpler function)
-    {"neovim/nvim-lspconfig"}, {"rinx/lspsaga.nvim"}, {"williamboman/nvim-lsp-installer"}, {"nvim-lua/popup.nvim"}, {
+    -- LSP
+    "neovim/nvim-lspconfig", -- enable LSP
+    "williamboman/nvim-lsp-installer", -- simple to use language server installer
+    "tamago324/nlsp-settings.nvim", -- language server settings defined in json for
+    "jose-elias-alvarez/null-ls.nvim", { -- for formatters and linters, {"nvim-lua/popup.nvim"}, {
         "nvim-telescope/telescope.nvim",
         commit = "991d0127f0abc6db9d8efd3a49e53a6867de5559",
         config = function()
@@ -30,7 +34,12 @@ return {
         end
     }, -- Debugging
     {"mfussenegger/nvim-dap"}, -- Autocomplete
-    {"hrsh7th/nvim-compe"}, {"rafamadriz/friendly-snippets"}, -- Treesitter
+    {
+        "hrsh7th/nvim-cmp",
+        config = function()
+            require("plugins.cmp").setup()
+        end
+    }, {"rafamadriz/friendly-snippets"}, -- Treesitter
     {
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",

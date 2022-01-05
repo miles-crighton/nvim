@@ -30,7 +30,7 @@ M.components = {
     filetype = {"filetype", icon_only = true, cond = M.conditions.hide_in_width, color = {}},
     diagnostics = {
         "diagnostics",
-        sources = {"nvim_lsp"},
+        sources = {"nvim_diagnostic"},
         symbols = {error = " ", warn = " ", info = " ", hint = " "},
         color = {},
         cond = M.conditions.hide_in_width
