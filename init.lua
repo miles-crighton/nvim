@@ -1,5 +1,3 @@
-require("lv-globals")
-
 local plugins = require("plugin-config")
 require("plugin-loader").load({ plugins })
 
