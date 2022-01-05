@@ -20,6 +20,12 @@ return {
 			end,
 		},
 	},
+	{
+		"tami5/lspsaga.nvim",
+		config = function()
+			require("lspsaga").init_lsp_saga()
+		end,
+	},
 	{ "sbdchd/neoformat" },
 	{ "drewtempelmeyer/palenight.vim" },
 	{ "metakirby5/codi.vim" },
