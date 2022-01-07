@@ -12,8 +12,6 @@ M.setup = function()
 	local diagnostics = null_ls.builtins.diagnostics
 
 	null_ls.setup({
-		debounce = 150,
-		autostart = true,
 		debug = true,
 		sources = {
 			require("lsp.null-ls.eslint-source").setup(),
@@ -22,6 +20,7 @@ M.setup = function()
 			formatting.stylua,
 			diagnostics.shellcheck,
 		},
+		-- does not work with tsx, needs BufWritePost
 		on_attach = function(client)
 			if client.resolved_capabilities.document_formatting then
 				vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")

@@ -58,13 +58,4 @@ define_augroups({
 		{ "FileType", "lspinfo", "nnoremap <silent> <buffer> q :q<CR>" },
 		{ "FileType", "floaterm", "nnoremap <silent> <buffer> q :q<CR>" },
 	},
-	_auto_formatters = {
-		{ "BufWritePre", "*.py", "lua vim.lsp.buf.formatting_sync()" },
-		{ "BufWritePre", "*.js", "lua vim.lsp.buf.formatting_sync()" },
-		{ "BufWritePre", "*.jsx", "lua vim.lsp.buf.formatting_sync()" },
-		{ "BufWritePost", "*.ts", "lua vim.lsp.buf.formatting_sync()" },
-		{ "BufWritePost", "*.tsx", "lua vim.lsp.buf.formatting_sync()" },
-		{ "BufWritePre", "*.lua", "lua vim.lsp.buf.formatting_sync()" },
-		{ "BufWritePre", "*.json", "lua vim.lsp.buf.formatting_sync()" },
-	},
 })
