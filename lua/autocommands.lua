@@ -28,6 +28,7 @@ define_augroups({
 		{ "BufNewFile", "*", "setlocal formatoptions-=c formatoptions-=r formatoptions-=o" },
 		{ "VimLeavePre", "*", "set title set titleold=" },
 		{ "CursorHold", "*", "lua require('lspsaga.diagnostic').show_cursor_diagnostics()" },
+		{ "TermOpen", "*", "lua require('harpoon.term').sendCommand(0, 'fish')" },
 	},
 	_java = {
 		{ "FileType", "java", "luafile ~/.config/nvim/lua/lsp/java-ls.lua" },
@@ -58,4 +59,5 @@ define_augroups({
 		{ "FileType", "lspinfo", "nnoremap <silent> <buffer> q :q<CR>" },
 		{ "FileType", "floaterm", "nnoremap <silent> <buffer> q :q<CR>" },
 	},
+	_term = {},
 })

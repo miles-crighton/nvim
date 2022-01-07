@@ -3,6 +3,11 @@ if not status_ok then
 	return
 end
 
+local function organize_imports()
+	local params = { command = "_typescript.organizeImports", arguments = { vim.api.nvim_buf_get_name(0) }, title = "" }
+	vim.lsp.buf.execute_command(params)
+end
+
 -- Register a handler that will be called for all installed servers.
 -- Alternatively, you may also register handlers on specific server instances instead (see example below).
 lsp_installer.on_server_ready(function(server)
@@ -10,6 +15,13 @@ lsp_installer.on_server_ready(function(server)
 		on_attach = require("lsp.handlers").on_attach,
 		capabilities = require("lsp.handlers").capabilities,
 	}
+
+	if server.name == "tsserver" then
+		local tsserver_opts = {
+			commands = { OrganizeImports = { organize_imports, description = "Organize Imports" } },
+		}
+		opts = vim.tbl_deep_extend("force", tsserver_opts, opts)
+	end
 
 	if server.name == "jsonls" then
 		local jsonls_opts = require("lsp.settings.jsonls")
