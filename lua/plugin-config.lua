@@ -103,17 +103,20 @@ return {
 
 	-- Code utils
 	{
-		"nvim-reesitter/nvim-treesitter",
+		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 		config = function()
 			require("plugins.treesitter").setup()
 		end,
 	},
 	{
-		"terrortylor/nvim-comment",
+		"numToStr/Comment.nvim",
 		config = function()
-			require("nvim_comment").setup()
+			require("plugins.comment").setup()
 		end,
+		requires = {
+			"JoosepAlviste/nvim-ts-context-commentstring",
+		},
 	},
 
 	-- UI

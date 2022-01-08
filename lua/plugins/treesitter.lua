@@ -8,6 +8,9 @@ M.config = {
 	autotag = {
 		enable = true,
 	},
+	context_commentstring = {
+		enable = true,
+	},
 }
 
 M.setup = function()
