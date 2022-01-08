@@ -88,19 +88,25 @@ return {
 		},
 	},
 	{ "rafamadriz/friendly-snippets" },
-
-	-- Code utils
-	{
-		"nvim-treesitter/nvim-treesitter",
-		run = ":TSUpdate",
-		config = function()
-			require("plugins.treesitter").setup()
-		end,
-	},
 	{
 		"windwp/nvim-autopairs",
 		config = function()
 			require("plugins.autopairs").setup()
+		end,
+	},
+	{
+		"windwp/nvim-ts-autotag",
+		config = function()
+			require("nvim-ts-autotag").setup()
+		end,
+	},
+
+	-- Code utils
+	{
+		"nvim-reesitter/nvim-treesitter",
+		run = ":TSUpdate",
+		config = function()
+			require("plugins.treesitter").setup()
 		end,
 	},
 	{
@@ -109,7 +115,6 @@ return {
 			require("nvim_comment").setup()
 		end,
 	},
-	{ "windwp/nvim-ts-autotag" },
 
 	-- UI
 	{ "kevinhwang91/nvim-bqf" },

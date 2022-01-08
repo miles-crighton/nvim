@@ -15,7 +15,7 @@ M.setup = function()
 		debug = true,
 		sources = {
 			require("lsp.null-ls.eslint-source").setup(),
-			formatting.prettierd.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
+			formatting.prettierd, --{ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }
 			formatting.black.with({ extra_args = { "--fast" } }),
 			formatting.stylua,
 			diagnostics.shellcheck,
