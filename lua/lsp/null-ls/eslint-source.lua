@@ -14,7 +14,9 @@ M.setup = function()
 			table.insert(params.messages, { message = params.err })
 		end
 		for _, value in ipairs(params.messages) do
-			value.message = value.message .. " [" .. value.ruleId .. "]"
+			if type(value.ruleId) == "string" then
+				value.message = value.message .. " [" .. value.ruleId .. "]"
+			end
 		end
 
 		local parser = h.diagnostics.from_json({
