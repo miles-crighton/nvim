@@ -4,6 +4,12 @@ return {
 	{ "nvim-lua/plenary.nvim" },
 	{ "kyazdani42/nvim-web-devicons" },
 	{ "metakirby5/codi.vim" },
+	{
+		"folke/zen-mode.nvim",
+		config = function()
+			require("zen-mode").setup({})
+		end,
+	},
 
 	-- Git
 	{
