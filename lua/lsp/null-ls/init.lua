@@ -13,8 +13,9 @@ M.setup = function()
 
 	null_ls.setup({
 		debug = true,
+		diagnostics_format = "#{m} [#{c}]",
 		sources = {
-			require("lsp.null-ls.eslint-source").setup(),
+			diagnostics.eslint_d,
 			formatting.prettierd, --{ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }
 			formatting.black.with({ extra_args = { "--fast" } }),
 			formatting.stylua,
