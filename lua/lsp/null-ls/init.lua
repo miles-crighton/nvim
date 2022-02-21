@@ -16,7 +16,7 @@ M.setup = function()
 		diagnostics_format = "#{m} [#{c}]",
 		sources = {
 			diagnostics.eslint_d,
-			formatting.prettierd, --{ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }
+			formatting.prettier_d_slim, --{ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }
 			formatting.black.with({ extra_args = { "--fast" } }),
 			formatting.stylua,
 			diagnostics.shellcheck,
