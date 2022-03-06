@@ -15,8 +15,19 @@ M.setup = function()
 		debug = true,
 		diagnostics_format = "#{m} [#{c}]",
 		sources = {
-			diagnostics.eslint_d,
-			formatting.prettier_d_slim, --{ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }
+			diagnostics.eslint_d.with({
+				extra_filetypes = { "svelte" },
+				-- Use command to properly load the eslint config
+				command = "./node_modules/.bin/eslint",
+			}),
+			-- Possibly use this if eslint_d does not now work for other filetypes (other than .svelte)
+			-- diagnostics.eslint.with({
+			-- 	filetypes = { "svelte" },
+			-- 	command = "./node_modules/.bin/eslint",
+			-- }),
+			formatting.prettierd.with({
+				extra_filetypes = { "svelte" },
+			}),
 			formatting.black.with({ extra_args = { "--fast" } }),
 			formatting.stylua,
 			diagnostics.shellcheck,
