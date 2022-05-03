@@ -1,6 +1,6 @@
 # Personal Nvim Config
 
-> Currently used with NVIM v0.6.1
+> Currently used with NVIM v0.7.0
 
 The structure of this config aims to be as easy as possible for me to alter and tinker with.
 
