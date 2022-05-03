@@ -16,21 +16,22 @@ M.setup = function()
 		diagnostics_format = "#{m} [#{c}]",
 		sources = {
 			diagnostics.eslint_d.with({
-				extra_filetypes = { "svelte" },
-				-- Use command to properly load the eslint config
+				-- Load the local eslint config
 				command = "./node_modules/.bin/eslint",
 			}),
-			-- Possibly use this if eslint_d does not now work for other filetypes (other than .svelte)
-			-- diagnostics.eslint.with({
-			-- 	filetypes = { "svelte" },
-			-- 	command = "./node_modules/.bin/eslint",
-			-- }),
+			diagnostics.eslint.with({
+				filetypes = { "svelte" },
+				-- Load the local eslint config
+				command = "./node_modules/.bin/eslint",
+			}),
 			formatting.prettierd.with({
 				extra_filetypes = { "svelte" },
 			}),
 			formatting.black.with({ extra_args = { "--fast" } }),
 			formatting.stylua,
+			-- formatting.gofumpt,
 			diagnostics.shellcheck,
+			diagnostics.revive,
 		},
 		-- does not work with tsx, needs BufWritePost
 		on_attach = function(client)
