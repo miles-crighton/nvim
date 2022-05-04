@@ -1,22 +1,9 @@
-local function define_augroups(definitions) -- {{{1
-	-- Create autocommand groups based on the passed definitions
-	--
-	-- The key will be the name of the group, and each definition
-	-- within the group should have:
-	--    1. Trigger
-	--    2. Pattern
-	--    3. Text
-	-- just like how they would normally be defined from Vim itself
+local function define_augroups(definitions)
 	for group_name, definition in pairs(definitions) do
-		vim.cmd("augroup " .. group_name)
-		vim.cmd("autocmd!")
-
+		vim.api.nvim_create_augroup(group_name, { clear = true })
 		for _, def in pairs(definition) do
-			local command = table.concat(vim.tbl_flatten({ "autocmd", def }), " ")
-			vim.cmd(command)
+			vim.api.nvim_create_autocmd(def[1], { group = group_name, pattern = def[2], command = def[3] })
 		end
-
-		vim.cmd("augroup END")
 	end
 end
 
@@ -30,34 +17,9 @@ define_augroups({
 		{ "CursorHold", "*", "lua require('lspsaga.diagnostic').show_cursor_diagnostics()" },
 		{ "TermOpen", "*", "lua require('harpoon.term').sendCommand(0, 'fish')" },
 	},
-	_java = {
-		{ "FileType", "java", "luafile ~/.config/nvim/lua/lsp/java-ls.lua" },
-		{ "FileType", "java", "nnoremap ca <Cmd>lua require('jdtls').code_action()<CR>" },
-	},
-	_dashboard = {
-		-- seems to be nobuflisted that makes my stuff disapear will do more testing
-		{
-			"FileType",
-			"dashboard",
-			"setlocal nocursorline noswapfile synmaxcol& signcolumn=no norelativenumber nocursorcolumn nospell  nolist  nonumber bufhidden=wipe colorcolumn= foldcolumn=0 matchpairs= ",
-		},
-		{ "FileType", "dashboard", "set showtabline=0 | autocmd BufLeave <buffer> set showtabline=2" },
-	},
 	_markdown = { { "FileType", "markdown", "setlocal wrap" }, { "FileType", "markdown", "setlocal spell" } },
-	_solidity = {
-		{ "BufWinEnter", ".sol", "setlocal filetype=solidity" },
-		{ "BufRead", "*.sol", "setlocal filetype=solidity" },
-		{ "BufNewFile", "*.sol", "setlocal filetype=solidity" },
-	},
-	_gemini = {
-		{ "BufWinEnter", ".gmi", "setlocal filetype=markdown" },
-		{ "BufRead", "*.gmi", "setlocal filetype=markdown" },
-		{ "BufNewFile", "*.gmi", "setlocal filetype=markdown" },
-	},
 	_buffer_bindings = {
-		{ "FileType", "dashboard", "nnoremap <silent> <buffer> q :q<CR>" },
 		{ "FileType", "lspinfo", "nnoremap <silent> <buffer> q :q<CR>" },
 		{ "FileType", "floaterm", "nnoremap <silent> <buffer> q :q<CR>" },
 	},
-	_term = {},
 })
