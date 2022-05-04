@@ -79,15 +79,21 @@ return {
 
 	-- Autocomplete & Snippits
 	{
-		"ms-jpq/coq_nvim",
-		branch = "coq",
+		"hrsh7th/nvim-cmp",
 		config = function()
-			require("plugins.coq").setup()
+			require("plugins.nvimcmp").setup()
 		end,
 		requires = {
-			{ "ms-jpq/coq.artifacts" },
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-cmdline",
+			"hrsh7th/nvim-cmp",
+			"L3MON4D3/LuaSnip",
+			"saadparwaiz1/cmp_luasnip",
 		},
 	},
+	{ "rafamadriz/friendly-snippets" },
 	{
 		"windwp/nvim-autopairs",
 		config = function()
