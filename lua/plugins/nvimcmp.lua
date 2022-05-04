@@ -168,6 +168,9 @@ M.config = function()
 			ghost_text = true,
 			native_menu = false,
 		},
+		window = {
+			documentation = cmp.config.window.bordered(),
+		},
 		formatting = {
 			fields = { "kind", "abbr", "menu" },
 			kind_icons = {
@@ -219,9 +222,6 @@ M.config = function()
 			expand = function(args)
 				require("luasnip").lsp_expand(args.body)
 			end,
-		},
-		documentation = {
-			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 		},
 		sources = {
 			{ name = "nvim_lsp" },
