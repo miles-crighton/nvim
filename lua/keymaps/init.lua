@@ -82,7 +82,7 @@ local key_maps = {
 			-- Telescope
 			["<Leader>f"] = ":lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<CR>",
 
-			-- Nvimtree
+			-- Tree
 			["<Leader>e"] = ":NvimTreeToggle<CR>",
 
 			-- Buffers
