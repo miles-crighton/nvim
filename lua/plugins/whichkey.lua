@@ -107,6 +107,8 @@ M.mappings = {
 		x = { "<cmd>cclose<cr>", "Close Quickfix" },
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
 		S = { "<cmd>Telescope lsp_workspace_symbols<cr>", "Workspace Symbols" },
+		n = { "<cmd>:lua vim.diagnostic.goto_next()<cr>", "Go to next" },
+		N = { "<cmd>:lua vim.diagnostic.goto_prev()<cr>", "Go to prev" },
 	},
 
 	s = {
