@@ -11,8 +11,8 @@ vim.cmd('hi DiffDelete gui=NONE guifg=NONE guibg=#3e303a')
 -- vim.cmd('hi CursorLineNR guibg=#1f2335')
 
 -- Darken message area
--- vim.cmd('hi MsgArea guibg=#1f2335 guifg=#7dcfff')
+-- vim.cmd('hi MsgArea guibg=#1f2335 guifg=#9dcfff')
 
 -- Set window divider borders to be same color as background
--- vim.cmd('hi VertSplit ctermbg=NONE guibg=NONE guifg=#1f2335')
-vim.cmd('set fillchars+=vert:█')
+vim.cmd('hi VertSplit ctermbg=NONE guibg=NONE guifg=#363647')
+-- vim.cmd('set fillchars+=vert:█')

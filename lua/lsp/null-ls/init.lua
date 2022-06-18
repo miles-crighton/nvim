@@ -24,7 +24,7 @@ M.setup = function()
 				-- Load the local eslint config
 				command = "./node_modules/.bin/eslint",
 			}),
-			formatting.prettierd.with({
+			formatting.prettier_d_slim.with({
 				extra_filetypes = { "svelte" },
 			}),
 			formatting.black.with({ extra_args = { "--fast" } }),

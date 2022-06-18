@@ -30,13 +30,13 @@ M.components = {
 	branch = { "b:gitsigns_head", icon = " ", color = { gui = "bold" }, cond = M.conditions.hide_in_width },
 	filename = {
 		"filename",
-		file_status = false,
+		file_status = true,
 		path = 1,
-		shorting_target = 90,
+		-- shorting_target = 90,
 		color = { gui = "bold" },
 		cond = nil,
 	},
-	filetype = { "filetype", icon_only = true, cond = M.conditions.hide_in_width, color = {} },
+	filetype = { "filetype", icon_only = true, cond = M.conditions.hide_in_width, color = {}, icon = { align = 'right' } },
 	diagnostics = {
 		"diagnostics",
 		sources = { "nvim_diagnostic" },

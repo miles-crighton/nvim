@@ -14,6 +14,7 @@ vim.o.backup = false -- This is recommended by coc
 vim.o.writebackup = false -- This is recommended by coc
 vim.o.completeopt = "menu,menuone,noselect"
 vim.o.shell = "/bin/bash" -- Fish shell causes large lag across nvim
+vim.o.laststatus = 3 -- Unified window statusline
 
 --- Line Wrapping ---
 vim.wo.wrap = false -- Display long lines as just one line
