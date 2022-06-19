@@ -6,8 +6,22 @@ M.config = function(tree_cb)
 		disable_netrw = false,
 		open_on_setup = false,
 		renderer = {
+			highlight_git = true,
 			indent_markers = {
 				enable = true,
+			},
+			icons = {
+				show = {
+					git = true,
+					folder = true,
+					file = true,
+				},
+				glyphs = {
+					default = "",
+					symlink = "",
+					git = { unstaged = "", staged = "✓", unmerged = "", renamed = "➜", untracked = "" },
+					folder = { default = "", open = "", empty = "", empty_open = "", symlink = "" },
+				},
 			},
 		},
 		ignore_ft_on_setup = { " " },
@@ -31,17 +45,6 @@ M.config = function(tree_cb)
 end
 
 M.setup = function()
-	-- Legacy global settings, slowly being migrated by maintainers
-	vim.g.nvim_tree_show_icons = { git = 1, folders = 1, files = 1 }
-	vim.g.nvim_tree_git_hl = 1 -- 0 by default, will enable file highlight for git attributes (can be used without the icons).
-	vim.g.nvim_tree_auto_ignore_ft = "startify" -- empty by default, don't auto open tree on specific filetypes.
-	vim.g.nvim_tree_icons = {
-		default = "",
-		symlink = "",
-		git = { unstaged = "", staged = "✓", unmerged = "", renamed = "➜", untracked = "" },
-		folder = { default = "", open = "", empty = "", empty_open = "", symlink = "" },
-	}
-
 	local tree_cb = require("nvim-tree.config").nvim_tree_callback
 	require("nvim-tree").setup(M.config(tree_cb))
 end
