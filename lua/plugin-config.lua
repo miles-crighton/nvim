@@ -70,7 +70,9 @@ return {
 	{
 		"ThePrimeagen/harpoon",
 		config = function()
-			require("harpoon").setup({ global_settings = { save_on_toggle = false, save_on_change = true, enter_on_sendcmd = true } })
+			require("harpoon").setup({
+				global_settings = { save_on_toggle = false, save_on_change = true, enter_on_sendcmd = true },
+			})
 		end,
 	},
 
@@ -111,9 +113,14 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
-		commit = "668de0951a36ef17016074f1120b6aacbe6c4515",
 		config = function()
 			require("plugins.treesitter").setup()
+		end,
+	},
+	{
+		"nvim-treesitter/nvim-treesitter-context",
+		config = function()
+			require("treesitter-context").setup()
 		end,
 	},
 	{
