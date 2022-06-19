@@ -15,6 +15,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 	vim.cmd([[packadd packer.nvim]])
 end
 
+-- TODO: Use Autocommand lua API
 -- Autocommand that reloads neovim whenever you save the plugins-config.lua | plugins-loader.lua file
 vim.cmd([[
   augroup packer_user_config
