@@ -4,6 +4,7 @@ return {
 	{ "nvim-lua/plenary.nvim" },
 	{ "kyazdani42/nvim-web-devicons" },
 	{ "metakirby5/codi.vim" },
+	{ "antoinemadec/FixCursorHold.nvim" },
 	{
 		"folke/zen-mode.nvim",
 		config = function()
@@ -151,6 +152,25 @@ return {
 		"folke/which-key.nvim",
 		config = function()
 			require("plugins.whichkey").setup()
+		end,
+	},
+
+	-- Test and Debugging
+	{
+		"nvim-neotest/neotest",
+		requires = {
+			"haydenmeade/neotest-jest",
+			"nvim-neotest/neotest-go",
+			"nvim-neotest/neotest-plenary",
+		},
+		config = function()
+			require("neotest").setup({
+				adapters = {
+					require("neotest-jest"),
+					require("neotest-go"),
+					require("neotest-plenary"),
+				},
+			})
 		end,
 	},
 }

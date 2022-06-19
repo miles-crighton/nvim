@@ -62,7 +62,10 @@ M.mappings = {
 		["6"] = { "<cmd>lua require('harpoon.ui').nav_file(6)<cr>", "File 6" },
 		a = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Add file" },
 		x = { "<cmd>lua require('harpoon.mark').rm_file()<cr>", "Remove file mark" },
-		t = { "<cmd>lua require('harpoon.term').gotoTerminal(1)<cr><cmd>lua require('harpoon.term').sendCommand(1, 'fish')<cr>", "Terminal 1" },
+		t = {
+			"<cmd>lua require('harpoon.term').gotoTerminal(1)<cr><cmd>lua require('harpoon.term').sendCommand(1, 'fish')<cr>",
+			"Terminal 1",
+		},
 		m = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Quick Menu" },
 	},
 	d = {
@@ -127,10 +130,17 @@ M.mappings = {
 			"Text",
 		},
 	},
+
 	S = {
 		name = "+Session",
 		s = { "<cmd>SessionSave<cr>", "Save Session" },
 		l = { "<cmd>SessionLoad<cr>", "Load Session" },
+	},
+
+	t = {
+		r = { "<cmd>lua require('neotest').run.run()<cr>", "Run nearest test" },
+		f = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "Run tests in file" },
+		s = { "<cmd>lua require('neotest').summary.open()<cr>", "Open test summary" },
 	},
 }
 

@@ -29,6 +29,7 @@ M.setup = function()
 			header = "",
 			prefix = "",
 		},
+		neotest = true,
 	}
 
 	vim.diagnostic.config(config)
