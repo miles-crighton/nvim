@@ -32,6 +32,7 @@ M.config = function(tree_cb)
 		git = { enable = true, ignore = true, timeout = 501 },
 		filters = { dotfiles = false, custom = {} },
 		view = {
+			side = "right",
 			width = 30,
 			mappings = {
 				list = {
