@@ -4,6 +4,12 @@ return {
 	{ "nvim-lua/plenary.nvim" },
 	{ "kyazdani42/nvim-web-devicons" },
 	-- { "metakirby5/codi.vim" },
+	{
+		"brenoprata10/nvim-highlight-colors",
+		config = function()
+			require("nvim-highlight-colors").setup({})
+		end,
+	},
 	{ "antoinemadec/FixCursorHold.nvim" },
 	{
 		"folke/zen-mode.nvim",
@@ -41,7 +47,12 @@ return {
 
 	-- LSP
 	"neovim/nvim-lspconfig",
-	"williamboman/nvim-lsp-installer", -- simple to use language server installer
+	{
+		"williamboman/mason.nvim",
+		config = function()
+			require("mason").setup()
+		end,
+	},
 	"jose-elias-alvarez/null-ls.nvim",
 	{
 		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
