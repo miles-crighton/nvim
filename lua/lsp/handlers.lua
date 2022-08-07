@@ -14,8 +14,6 @@ M.setup = function()
 	end
 
 	local config = {
-		-- disable virtual text
-		virtual_text = false,
 		-- show signs
 		signs = { active = signs },
 		update_in_insert = true,
@@ -30,6 +28,8 @@ M.setup = function()
 			prefix = "",
 		},
 		neotest = true,
+		-- disable virtual text
+		virtual_text = false,
 	}
 
 	vim.diagnostic.config(config)

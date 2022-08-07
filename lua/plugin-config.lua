@@ -3,7 +3,7 @@ return {
 	{ "wbthomason/packer.nvim" },
 	{ "nvim-lua/plenary.nvim" },
 	{ "kyazdani42/nvim-web-devicons" },
-	{ "metakirby5/codi.vim" },
+	-- { "metakirby5/codi.vim" },
 	{ "antoinemadec/FixCursorHold.nvim" },
 	{
 		"folke/zen-mode.nvim",
@@ -42,18 +42,23 @@ return {
 	-- LSP
 	"neovim/nvim-lspconfig",
 	"williamboman/nvim-lsp-installer", -- simple to use language server installer
-	"tamago324/nlsp-settings.nvim", -- language server settings defined in json for
 	"jose-elias-alvarez/null-ls.nvim",
+	{
+		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+		config = function()
+			require("lsp_lines").setup()
+		end,
+	},
 
 	-- LSP utils
 	{
-		"folke/lsp-trouble.nvim",
+		"folke/trouble.nvim",
 		config = function()
 			require("trouble").setup({})
 		end,
 	},
 	{
-		"tami5/lspsaga.nvim",
+		"glepnir/lspsaga.nvim",
 		config = function()
 			require("lspsaga").init_lsp_saga()
 		end,
@@ -96,6 +101,15 @@ return {
 			"saadparwaiz1/cmp_luasnip",
 		},
 	},
+	-- Unfortunately coq struggles with long LSP timeouts from TSServer
+	-- {
+	-- 	"ms-jpq/coq_nvim",
+	-- 	branch = "coq",
+	-- 	requires = {
+	-- 		{ "ms-jpq/coq.artifacts", branch = "artifacts" },
+	-- 		{ "ms-jpq/coq.thirdparty", branch = "3p" },
+	-- 	},
+	-- },
 	{ "rafamadriz/friendly-snippets" },
 	{
 		"windwp/nvim-autopairs",
