@@ -16,6 +16,7 @@ define_augroups({
 		{ "VimLeavePre", "*", "set title set titleold=" },
 		{ "CursorHold", "*", "lua require('lspsaga.diagnostic').show_cursor_diagnostics()" },
 		{ "TermOpen", "*", "lua require('harpoon.term').sendCommand(0, 'fish')" },
+    { "BufWritePre", "*.rs", "lua vim.lsp.buf.formatting_sync()" }
 	},
 	_markdown = { { "FileType", "markdown", "setlocal wrap" }, { "FileType", "markdown", "setlocal spell" } },
 	_buffer_bindings = {

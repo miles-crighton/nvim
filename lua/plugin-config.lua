@@ -60,6 +60,12 @@ return {
 			require("lsp_lines").setup()
 		end,
 	},
+	{
+		"simrat39/rust-tools.nvim",
+		config = function()
+			require("rust-tools").setup()
+		end,
+	},
 
 	-- LSP utils
 	{
@@ -71,7 +77,11 @@ return {
 	{
 		"glepnir/lspsaga.nvim",
 		config = function()
-			require("lspsaga").init_lsp_saga()
+			require("lspsaga").init_lsp_saga({
+				code_action_lightbulb = {
+					enable = false,
+				},
+			})
 		end,
 	},
 
