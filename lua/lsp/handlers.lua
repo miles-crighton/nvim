@@ -28,8 +28,7 @@ M.setup = function()
 			prefix = "",
 		},
 		neotest = true,
-		-- disable virtual text
-		virtual_text = false,
+		virtual_text = true,
 	}
 
 	vim.diagnostic.config(config)
