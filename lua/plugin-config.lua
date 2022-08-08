@@ -47,12 +47,14 @@ return {
 
 	-- LSP
 	"neovim/nvim-lspconfig",
-	{
-		"williamboman/mason.nvim",
-		config = function()
-			require("mason").setup()
-		end,
-	},
+	"williamboman/nvim-lsp-installer",
+	-- Mason is not really ready yet,
+	-- {
+	-- 	"williamboman/mason.nvim",
+	-- 	config = function()
+	-- 		require("mason").setup()
+	-- 	end,
+	-- },
 	"jose-elias-alvarez/null-ls.nvim",
 	{
 		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
