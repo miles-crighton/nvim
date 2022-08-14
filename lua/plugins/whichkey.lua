@@ -102,7 +102,7 @@ M.mappings = {
 		f = { "<cmd>LspFormatting<cr>", "Format" },
 		i = { "<cmd>LspInfo<cr>", "Info" },
 		l = { "<cmd>Lspsaga lsp_finder<cr>", "LSP Finder" },
-		L = { "<cmd>Lspsaga show_line_diagnostics<cr>", "Line Diagnostics" },
+		L = { "<cmd>lua vim.diagnostic.open_float()<cr>", "Line Diagnostics" },
 		p = { "<cmd>Lspsaga preview_definition<cr>", "Preview Definition" },
 		q = { "<cmd>Telescope quickfix<cr>", "Quickfix" },
 		r = { "<cmd>Lspsaga rename<cr>", "Rename" },
@@ -112,6 +112,7 @@ M.mappings = {
 		S = { "<cmd>Telescope lsp_workspace_symbols<cr>", "Workspace Symbols" },
 		n = { "<cmd>:lua vim.diagnostic.goto_next()<cr>", "Go to next" },
 		N = { "<cmd>:lua vim.diagnostic.goto_prev()<cr>", "Go to prev" },
+		T = { "<cmd>TroubleToggle<cr>", "Toggle trouble" },
 	},
 
 	s = {

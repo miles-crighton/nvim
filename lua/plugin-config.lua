@@ -4,6 +4,12 @@ return {
 	{ "nvim-lua/plenary.nvim" },
 	{ "kyazdani42/nvim-web-devicons" },
 	{
+		"lukas-reineke/indent-blankline.nvim",
+		config = function()
+			require("indent_blankline").setup()
+		end,
+	},
+	{
 		"NvChad/nvterm",
 		config = function()
 			require("plugins.nvterm").setup()
