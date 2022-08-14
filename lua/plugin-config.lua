@@ -3,6 +3,12 @@ return {
 	{ "wbthomason/packer.nvim" },
 	{ "nvim-lua/plenary.nvim" },
 	{ "kyazdani42/nvim-web-devicons" },
+	{
+		"NvChad/nvterm",
+		config = function()
+			require("plugins.nvterm").setup()
+		end,
+	},
 	-- { "metakirby5/codi.vim" },
 	{
 		"brenoprata10/nvim-highlight-colors",

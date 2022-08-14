@@ -90,6 +90,10 @@ local key_maps = {
 
 			-- Highlights
 			["<Leader>h"] = ":set hlsearch!<CR>",
+
+			-- Toggle term
+			["<A-b>"] = ":lua require('nvterm.terminal').toggle('horizontal')<cr>",
+			["<A-v>"] = ":lua require('nvterm.terminal').toggle('vertical')<cr>",
 		},
 
 		term_mode = {
