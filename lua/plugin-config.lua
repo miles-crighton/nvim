@@ -3,6 +3,7 @@ return {
 	{ "wbthomason/packer.nvim" },
 	{ "nvim-lua/plenary.nvim" },
 	{ "kyazdani42/nvim-web-devicons" },
+	{ "NvChad/ui" },
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		config = function()
