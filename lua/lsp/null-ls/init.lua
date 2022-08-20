@@ -15,10 +15,7 @@ M.setup = function()
 		debug = true,
 		diagnostics_format = "#{m} [#{c}]",
 		sources = {
-			diagnostics.eslint_d.with({
-				-- Load the local eslint config
-				command = "./node_modules/.bin/eslint",
-			}),
+			diagnostics.eslint_d,
 			diagnostics.eslint.with({
 				filetypes = { "svelte" },
 				-- Load the local eslint config

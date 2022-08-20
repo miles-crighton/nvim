@@ -61,6 +61,12 @@ return {
 	-- LSP
 	"neovim/nvim-lspconfig",
 	"williamboman/nvim-lsp-installer",
+	{
+		"j-hui/fidget.nvim",
+		config = function()
+			require("fidget").setup({})
+		end,
+	},
 	-- Mason is not really ready yet,
 	-- {
 	-- 	"williamboman/mason.nvim",

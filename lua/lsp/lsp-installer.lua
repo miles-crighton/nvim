@@ -19,6 +19,12 @@ lsp_installer.on_server_ready(function(server)
 	if server.name == "tsserver" then
 		local tsserver_opts = {
 			commands = { OrganizeImports = { organize_imports, description = "Organize Imports" } },
+			cmd = {
+				"typescript-language-server",
+				"--stdio",
+				-- This loads typescript@next from npm i -g installation
+				"--tsserver-path=/usr/local/lib/node_modules/typescript",
+			},
 		}
 		opts = vim.tbl_deep_extend("force", tsserver_opts, opts)
 	end

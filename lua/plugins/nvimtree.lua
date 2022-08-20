@@ -32,7 +32,7 @@ M.config = function(tree_cb)
 		git = { enable = true, ignore = true, timeout = 501 },
 		filters = { dotfiles = false, custom = {} },
 		view = {
-			width = 30,
+			width = 40,
 			mappings = {
 				list = {
 					{ key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
