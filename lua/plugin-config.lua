@@ -7,7 +7,12 @@ return {
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		config = function()
-			require("indent_blankline").setup()
+      vim.cmd("hi IndentBlanklineIndent1 guifg=#363647 gui=NONE")
+			require("indent_blankline").setup({
+				char_highlight_list = {
+					"IndentBlanklineIndent1",
+				},
+			})
 		end,
 	},
 	{
