@@ -18,9 +18,20 @@ return {
 	},
 	-- { "metakirby5/codi.vim" },
 	{
-		"brenoprata10/nvim-highlight-colors",
+		"norcalli/nvim-colorizer.lua",
 		config = function()
-			require("nvim-highlight-colors").setup({})
+			require("colorizer").setup(nil, {
+				RGB = true, -- #RGB hex codes
+				RRGGBB = true, -- #RRGGBB hex codes
+				names = false, -- "Name" codes like Blue
+				RRGGBBAA = true, -- #RRGGBBAA hex codes
+				rgb_fn = true, -- CSS rgb() and rgba() functions
+				hsl_fn = true, -- CSS hsl() and hsla() functions
+				css = false, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+				css_fn = false, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+				-- Available modes: foreground, background
+				mode = "background", -- Set the display mode.
+			})
 		end,
 	},
 	{ "antoinemadec/FixCursorHold.nvim" },
@@ -55,7 +66,12 @@ return {
 	-- Themes
 	{ "folke/tokyonight.nvim" },
 	{ "drewtempelmeyer/palenight.vim" },
-	{ "rebelot/kanagawa.nvim" },
+	{
+		"rebelot/kanagawa.nvim",
+		config = function()
+			require("kanagawa").setup({})
+		end,
+	},
 	{ "styled-components/vim-styled-components" },
 
 	-- LSP
@@ -174,6 +190,7 @@ return {
 			require("plugins.treesitter").setup()
 		end,
 	},
+	{ "nvim-treesitter/playground" },
 	{
 		"nvim-treesitter/nvim-treesitter-context",
 		config = function()

@@ -56,6 +56,7 @@ vim.o.ttimeoutlen = 0
 --- Colors & Highlights ---
 vim.g.tokyonight_transparent = true
 vim.o.termguicolors = true -- set term giu colors most terminals support this
+vim.o.t_Co = 256
 vim.wo.cursorline = true -- Enable highlighting of the current line
 vim.cmd("syntax on")
 
