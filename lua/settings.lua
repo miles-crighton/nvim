@@ -5,6 +5,7 @@ vim.cmd("set inccommand=split") -- Make substitution work in realtime
 vim.cmd("set autoread") -- autoread changes to buffered files on file system
 
 --- General Configs ---
+vim.g.mapleader = ' '
 vim.o.fileencoding = "utf-8" -- The encoding written to ile
 vim.cmd("set colorcolumn=99999") -- fix indentline for now
 vim.o.mouse = "a" -- Enable your mouse

@@ -24,6 +24,7 @@ M.setup = function()
 			formatting.prettier_d_slim.with({
 				extra_filetypes = { "svelte" },
 			}),
+			-- formatting.prettier,
 			formatting.black.with({ extra_args = { "--fast" } }),
 			formatting.stylua,
 			-- formatting.gofumpt,
@@ -32,7 +33,7 @@ M.setup = function()
 		},
 		-- does not work with tsx, needs BufWritePost
 		on_attach = function(client)
-			if client.resolved_capabilities.document_formatting then
+			if client.server_capabilities.document_formatting then
 				vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
 			end
 		end,

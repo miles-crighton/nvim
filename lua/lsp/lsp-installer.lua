@@ -23,7 +23,7 @@ lsp_installer.on_server_ready(function(server)
 				"typescript-language-server",
 				"--stdio",
 				-- This loads typescript@next from npm i -g installation
-				"--tsserver-path=/usr/local/lib/node_modules/typescript",
+				-- "--tsserver-path=/usr/local/lib/node_modules/typescript",
 			},
 		}
 		opts = vim.tbl_deep_extend("force", tsserver_opts, opts)
@@ -43,6 +43,11 @@ lsp_installer.on_server_ready(function(server)
 		local tailwindcss_opts = {
 			settings = {
 				tailwindCSS = {
+					classAttributes = {
+						"class",
+						"className",
+						".*Classes",
+					},
 					experimental = {
 						classRegex = { -- for haml :D
 							"tw`([^`]*)", -- tw`...`
@@ -50,6 +55,10 @@ lsp_installer.on_server_ready(function(server)
 							'tw={"([^"}]*)', -- <div tw={"..."} />
 							"tw\\.\\w+`([^`]*)", -- tw.xxx`...`
 							"tw\\(.*?\\)`([^`]*)", -- tw(Component)`...`
+							{ "Classes \\=([^;]*);", "'([^']*)'" },
+							{ "Classes \\=([^;]*);", '"([^"]*)"' },
+							{ "Classes \\=([^;]*);", "\\`([^\\`]*)\\`" },
+							{ "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
 						},
 					},
 				},

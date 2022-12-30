@@ -7,7 +7,7 @@ return {
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		config = function()
-      vim.cmd("hi IndentBlanklineIndent1 guifg=#363647 gui=NONE")
+			vim.cmd("hi IndentBlanklineIndent1 guifg=#363647 gui=NONE")
 			require("indent_blankline").setup({
 				char_highlight_list = {
 					"IndentBlanklineIndent1",
@@ -236,7 +236,7 @@ return {
 	-- Test and Debugging
 	{
 		"nvim-neotest/neotest",
-		requires = {
+		dependencies = {
 			"haydenmeade/neotest-jest",
 			"nvim-neotest/neotest-go",
 			"nvim-neotest/neotest-plenary",
