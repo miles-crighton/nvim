@@ -2,7 +2,6 @@ local M = {}
 
 M.config = {
 	terminals = {
-		shell = "/usr/local/bin/fish",
 		list = {},
 		type_opts = {
 			float = {

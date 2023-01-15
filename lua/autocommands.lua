@@ -15,7 +15,6 @@ define_augroups({
 		{ "BufNewFile", "*", "setlocal formatoptions-=c formatoptions-=r formatoptions-=o" },
 		{ "VimLeavePre", "*", "set title set titleold=" },
 		{ "CursorHold", "*", "lua vim.diagnostic.open_float()" },
-		{ "TermOpen", "*", "lua require('harpoon.term').sendCommand(1, 'fish')" },
 		{ "BufWritePre", "*.rs", "lua vim.lsp.buf.formatting_sync()" },
 	},
 	_markdown = { { "FileType", "markdown", "setlocal wrap" }, { "FileType", "markdown", "setlocal spell" } },

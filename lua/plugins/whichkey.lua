@@ -63,7 +63,7 @@ M.mappings = {
 		a = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Add file" },
 		x = { "<cmd>lua require('harpoon.mark').rm_file()<cr>", "Remove file mark" },
 		t = {
-			"<cmd>lua require('harpoon.term').gotoTerminal(1)<cr><cmd>lua require('harpoon.term').sendCommand(1, 'fish')<cr>",
+			"<cmd>lua require('harpoon.term').gotoTerminal(1)<cr>",
 			"Terminal 1",
 		},
 		m = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Quick Menu" },
