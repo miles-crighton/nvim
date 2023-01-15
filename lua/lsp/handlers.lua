@@ -83,7 +83,8 @@ end
 
 M.on_attach = function(client, bufnr)
 	if client.name == "tsserver" or client.name == "svelte" then
-		client.server_capabilities.document_formatting = false
+    client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentRangeFormattingProvider = false
 	end
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)

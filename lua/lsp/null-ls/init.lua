@@ -31,10 +31,16 @@ M.setup = function()
 			diagnostics.shellcheck,
 			diagnostics.revive,
 		},
-		-- does not work with tsx, needs BufWritePost
-		on_attach = function(client)
-			if client.server_capabilities.document_formatting then
-				vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+		on_attach = function(client, bufnr)
+			if client.supports_method("textDocument/formatting") then
+				vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+				vim.api.nvim_create_autocmd("BufWritePre", {
+					group = augroup,
+					buffer = bufnr,
+					callback = function()
+						vim.lsp.buf.format({ bufnr = bufnr })
+					end,
+				})
 			end
 		end,
 	})
