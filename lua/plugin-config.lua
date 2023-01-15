@@ -154,7 +154,7 @@ return {
 		config = function()
 			require("plugins.nvimcmp").setup()
 		end,
-		requires = {
+		dependencies = {
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
@@ -207,7 +207,7 @@ return {
 		config = function()
 			require("plugins.comment").setup()
 		end,
-		requires = {
+		dependencies = {
 			"JoosepAlviste/nvim-ts-context-commentstring",
 		},
 	},
