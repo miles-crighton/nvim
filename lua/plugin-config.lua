@@ -3,7 +3,6 @@ return {
 	{ "wbthomason/packer.nvim" },
 	{ "nvim-lua/plenary.nvim" },
 	{ "kyazdani42/nvim-web-devicons" },
-	{ "NvChad/ui" },
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		config = function()
@@ -73,6 +72,8 @@ return {
 	{ "drewtempelmeyer/palenight.vim" },
 	{
 		"rebelot/kanagawa.nvim",
+		lazy = false,
+		priority = 1000,
 		config = function()
 			require("kanagawa").setup({})
 		end,
@@ -118,8 +119,9 @@ return {
 	},
 	{
 		"glepnir/lspsaga.nvim",
+		event = "BufRead",
 		config = function()
-			require("lspsaga").init_lsp_saga({
+			require("lspsaga").setup({
 				code_action_lightbulb = {
 					enable = false,
 				},
