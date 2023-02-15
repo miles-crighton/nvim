@@ -2,6 +2,21 @@ return {
 	-- Misc
 	{ "wbthomason/packer.nvim" },
 	{ "nvim-lua/plenary.nvim" },
+	{ "NvChad/ui" },
+	{
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
+		config = function()
+			require("copilot").setup({
+				suggestion = {
+					enabled = true,
+					auto_trigger = true,
+					debounce = 75,
+				},
+			})
+		end,
+	},
 	{ "kyazdani42/nvim-web-devicons" },
 	{
 		"lukas-reineke/indent-blankline.nvim",
@@ -161,7 +176,6 @@ return {
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-cmdline",
-			"hrsh7th/nvim-cmp",
 			"L3MON4D3/LuaSnip",
 			"saadparwaiz1/cmp_luasnip",
 		},
