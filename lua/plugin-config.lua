@@ -1,8 +1,7 @@
 return {
 	-- Misc
-	{ "wbthomason/packer.nvim" },
-	{ "nvim-lua/plenary.nvim" },
-	{ "NvChad/ui" },
+	"nvim-lua/plenary.nvim",
+	"NvChad/ui",
 	{
 		"zbirenbaum/copilot.lua",
 		cmd = "Copilot",
@@ -17,7 +16,7 @@ return {
 			})
 		end,
 	},
-	{ "kyazdani42/nvim-web-devicons" },
+	{ "nvim-tree/nvim-web-devicons" },
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		config = function()
@@ -71,12 +70,6 @@ return {
 	},
 	{ "tpope/vim-fugitive" },
 	{ "APZelos/blamer.nvim" },
-	{
-		"sindrets/diffview.nvim",
-		config = function()
-			require("plugins.diffview").setup()
-		end,
-	},
 	{ "TimUntersberger/neogit" },
 	{
 		"kdheepak/lazygit.nvim",
@@ -89,9 +82,6 @@ return {
 		"rebelot/kanagawa.nvim",
 		lazy = false,
 		priority = 1000,
-		config = function()
-			require("kanagawa").setup({})
-		end,
 	},
 	{ "styled-components/vim-styled-components" },
 
@@ -176,8 +166,6 @@ return {
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-cmdline",
-			"L3MON4D3/LuaSnip",
-			"saadparwaiz1/cmp_luasnip",
 		},
 	},
 	-- Unfortunately coq struggles with long LSP timeouts from TSServer
@@ -189,10 +177,9 @@ return {
 	-- 		{ "ms-jpq/coq.thirdparty", branch = "3p" },
 	-- 	},
 	-- },
-	{ "rafamadriz/friendly-snippets" },
 	{
 		"windwp/nvim-autopairs",
-		config = function()
+		init = function()
 			require("plugins.autopairs").setup()
 		end,
 	},
@@ -206,15 +193,14 @@ return {
 	-- Code utils
 	{
 		"nvim-treesitter/nvim-treesitter",
-		run = ":TSUpdate",
+		build = ":TSUpdate",
 		config = function()
 			require("plugins.treesitter").setup()
 		end,
 	},
-	{ "nvim-treesitter/playground" },
 	{
 		"nvim-treesitter/nvim-treesitter-context",
-		config = function()
+		init = function()
 			require("treesitter-context").setup()
 		end,
 	},

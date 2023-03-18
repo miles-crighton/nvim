@@ -36,11 +36,6 @@ M.config = function()
 				border = border("CmpDocBorder"),
 			},
 		},
-		snippet = {
-			expand = function(args)
-				require("luasnip").lsp_expand(args.body)
-			end,
-		},
 		formatting = {
 			format = function(_, vim_item)
 				local icons = require("nvchad_ui.icons").lspkind

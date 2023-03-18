@@ -7,11 +7,11 @@ local function eslint_config_exists()
 		return true
 	end
 
-	if vim.fn.filereadable("package.json") then
-		if vim.fn.json_decode(vim.fn.readfile("package.json"))["eslintConfig"] then
-			return true
-		end
-	end
+	-- if vim.fn.filereadable("package.json") then
+	-- 	if vim.fn.json_decode(vim.fn.readfile("package.json"))["eslintConfig"] then
+	-- 		return true
+	-- 	end
+	-- end
 
 	return false
 end
