@@ -234,6 +234,7 @@ return {
 	{ "kevinhwang91/nvim-bqf" },
 	{
 		"kyazdani42/nvim-tree.lua",
+		cmd = { "NvimTreeToggle", "NvimTreeFocus" },
 		config = function()
 			require("plugins.nvimtree").setup()
 		end,
