@@ -251,6 +251,10 @@ return {
 			require("plugins.whichkey").setup()
 		end,
 	},
+	{
+		"sindrets/diffview.nvim",
+		cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles", "DiffviewFileHistory" },
+	},
 
 	-- Test and Debugging
 	{
