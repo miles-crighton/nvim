@@ -145,6 +145,9 @@ return {
 				code_action_lightbulb = {
 					enable = false,
 				},
+				symbol_in_winbar = {
+					enable = false,
+				},
 			})
 		end,
 	},
