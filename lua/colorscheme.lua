@@ -13,4 +13,9 @@ vim.cmd("hi DiffDelete gui=NONE guifg=NONE guibg=#3e303a")
 
 -- Set window divider borders to be same color as background
 vim.cmd("hi VertSplit ctermbg=NONE guibg=NONE guifg=#363647")
+vim.cmd("highlight clear SignColumn")
+vim.cmd("highlight LineNr guibg=none")
+vim.cmd("highlight GitSignsAdd guibg=NONE")
+vim.cmd("highlight GitSignsChange guibg=NONE")
+vim.cmd("highlight GitSignsDelete guibg=NONE")
 -- vim.cmd('set fillchars+=vert:█')

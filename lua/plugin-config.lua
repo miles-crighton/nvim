@@ -64,7 +64,7 @@ return {
 	{
 		"lewis6991/gitsigns.nvim",
 		event = "BufRead",
-		config = function()
+		init = function()
 			require("plugins.gitsigns").setup()
 		end,
 	},
@@ -198,6 +198,7 @@ return {
 			require("plugins.treesitter").setup()
 		end,
 	},
+	"nvim-treesitter/playground",
 	{
 		"nvim-treesitter/nvim-treesitter-context",
 		init = function()
