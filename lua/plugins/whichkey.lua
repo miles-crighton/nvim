@@ -113,6 +113,8 @@ M.mappings = {
 		n = { "<cmd>:lua vim.diagnostic.goto_next()<cr>", "Go to next" },
 		N = { "<cmd>:lua vim.diagnostic.goto_prev()<cr>", "Go to prev" },
 		T = { "<cmd>TroubleToggle<cr>", "Toggle trouble" },
+		o = { "<cmd>:TSToolsOrganizeImports<cr>", "Organize Imports" },
+		c = { "<cmd>:lua require('copilot.panel').open({'right', 0.4})<CR>", "Open Copilot Panel" },
 	},
 
 	s = {

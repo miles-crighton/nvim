@@ -9,32 +9,17 @@ return {
 		config = function()
 			require("copilot").setup({
 				suggestion = {
-					enabled = true,
 					auto_trigger = true,
-					debounce = 75,
+				},
+				panel = {
+					layout = {
+						position = "right",
+					},
 				},
 			})
 		end,
 	},
 	{ "nvim-tree/nvim-web-devicons" },
-	-- Causes slow down on scroll
-	-- {
-	--   "lukas-reineke/indent-blankline.nvim",
-	--   config = function()
-	--     vim.cmd("hi IndentBlanklineIndent1 guifg=#363647 gui=NONE")
-	--     require("indent_blankline").setup({
-	--       char_highlight_list = {
-	--         "IndentBlanklineIndent1",
-	--       },
-	--     })
-	--   end,
-	-- },
-	-- {
-	--   "NvChad/nvterm",
-	--   config = function()
-	--     require("plugins.nvterm").setup()
-	--   end,
-	-- },
 	{
 		"norcalli/nvim-colorizer.lua",
 		config = function()
@@ -52,12 +37,6 @@ return {
 			})
 		end,
 	},
-	-- {
-	--   "folke/zen-mode.nvim",
-	--   config = function()
-	--     require("zen-mode").setup({})
-	--   end,
-	-- },
 	{
 		"kylechui/nvim-surround",
 		version = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -66,7 +45,6 @@ return {
 			require("nvim-surround").setup()
 		end,
 	},
-
 	-- -- Git
 	-- -- Causing slow down on scroll
 	-- {
@@ -101,7 +79,6 @@ return {
 		lazy = false,
 		priority = 1000,
 	},
-	-- { "styled-components/vim-styled-components" },
 
 	-- -- LSP
 	"neovim/nvim-lspconfig",
@@ -177,9 +154,6 @@ return {
 		end,
 	},
 
-	-- -- Debugging
-	-- { "mfussenegger/nvim-dap" },
-
 	-- -- Autocomplete & Snippits
 	{
 		"hrsh7th/nvim-cmp",
@@ -198,6 +172,7 @@ return {
 		init = function()
 			require("plugins.autopairs").setup()
 		end,
+		event = "InsertEnter",
 	},
 	{
 		"windwp/nvim-ts-autotag",
