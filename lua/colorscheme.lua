@@ -4,6 +4,8 @@ vim.cmd("colorscheme kanagawa")
 vim.cmd("hi DiffAdd gui=NONE guifg=NONE guibg=#3d4543")
 vim.cmd("hi DiffDelete gui=NONE guifg=NONE guibg=#3e303a")
 
+vim.cmd("hi NvimTreeIndentMarker gui=NONE guifg=NONE guibg=NONE")
+
 -- Darken current line highlight
 -- vim.cmd("hi CursorLine guibg=#1f2335")
 -- vim.cmd("hi CursorLineNR guibg=#1f2335")
