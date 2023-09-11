@@ -78,11 +78,15 @@ return {
 		"rebelot/kanagawa.nvim",
 		lazy = false,
 		priority = 1000,
+		config = function()
+			vim.cmd("colorscheme kanagawa")
+		end,
 	},
+	{ "rktjmp/lush.nvim" },
 
 	-- -- LSP
 	"neovim/nvim-lspconfig",
-	"williamboman/nvim-lsp-installer",
+	{ "williamboman/mason.nvim", opts = {} },
 	{
 		"j-hui/fidget.nvim",
 		tag = "legacy",
@@ -230,6 +234,12 @@ return {
 	{
 		"sindrets/diffview.nvim",
 		cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles", "DiffviewFileHistory" },
+	},
+	{
+		"stevearc/oil.nvim",
+		opts = {},
+		-- Optional dependencies
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 
 	-- Test and Debugging

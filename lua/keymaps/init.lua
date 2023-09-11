@@ -49,7 +49,8 @@ local key_maps = {
 			["<Leader>f"] = ":lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<CR>",
 
 			-- Tree
-			["<Leader>e"] = ":NvimTreeToggle<CR>",
+			["<Leader>E"] = ":NvimTreeToggle<CR>",
+			["<Leader>e"] = ":lua require('oil').open()<CR>",
 
 			-- Buffers
 			["<Leader>c"] = ":BufferClose<CR>",
