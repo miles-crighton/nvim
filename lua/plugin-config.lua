@@ -189,11 +189,10 @@ return {
 		},
 	},
 	{
-		"windwp/nvim-autopairs",
-		init = function()
-			require("plugins.autopairs").setup()
-		end,
-		event = "InsertEnter",
+		"altermo/ultimate-autopair.nvim",
+		event = { "InsertEnter", "CmdlineEnter" },
+		branch = "v0.6",
+		opts = {},
 	},
 	{
 		"windwp/nvim-ts-autotag",
