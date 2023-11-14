@@ -44,10 +44,9 @@ M.setup = function()
 			formatting.prettierd.with({
 				extra_filetypes = { "svelte" },
 			}),
-			-- formatting.prettier,
 			formatting.black.with({ extra_args = { "--fast" } }),
 			formatting.stylua,
-			-- formatting.gofumpt,
+			formatting.gofumpt,
 			diagnostics.shellcheck,
 			diagnostics.revive,
 		},

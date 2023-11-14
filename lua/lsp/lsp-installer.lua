@@ -28,3 +28,9 @@ lspconfig.tailwindcss.setup({
 lspconfig.terraformls.setup({
 	filetypes = { "terraform", "tf" },
 })
+
+lspconfig.gopls.setup({})
+
+lspconfig.html.setup({})
+
+lspconfig.htmx.setup({})
