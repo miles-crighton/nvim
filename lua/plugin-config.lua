@@ -106,7 +106,7 @@ return {
 		config = function()
 			require("typescript-tools").setup({
 				on_attach = function(client, bufnr)
-					require("lsp.handlers").on_attach(client, bufnr)
+					require("lsp.on-attach").on_attach(client, bufnr)
 				end,
 			})
 		end,
