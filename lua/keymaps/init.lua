@@ -57,6 +57,9 @@ local key_maps = {
 
 			-- Highlights
 			["<Leader>h"] = ":set hlsearch!<CR>",
+
+			["<Leader><C-r>"] = ":OpenInGHRepo<CR>",
+			["<Leader>gf"] = ":OpenInGHFile<CR>",
 		},
 		term_mode = {
 			-- Terminal window navigation
@@ -76,6 +79,9 @@ local key_maps = {
 
 			-- Comments
 			["<leader>/"] = ":CommentToggle<CR>",
+
+			-- Go to file in repo
+			["<Leader>gf"] = ":OpenInGHFileLines<CR>",
 		},
 
 		visual_block_mode = {
