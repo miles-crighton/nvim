@@ -35,6 +35,8 @@ lspconfig.html.setup({})
 
 lspconfig.htmx.setup({})
 
+lspconfig.svelte.setup({})
+
 lspconfig.ocamllsp.setup({
 	on_attach = require("lsp/on-attach").on_attach,
 })
