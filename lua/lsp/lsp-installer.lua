@@ -35,7 +35,20 @@ lspconfig.html.setup({})
 
 lspconfig.htmx.setup({})
 
-lspconfig.svelte.setup({})
+lspconfig.svelte.setup({
+	on_attach = function(client, bufnr)
+		-- Changes in TS files is not picked up in .svelte files,
+		-- so we need to manually notify the server
+		-- See: https://github.com/neovim/nvim-lspconfig/issues/725#issuecomment-1837509673
+		vim.api.nvim_create_autocmd("BufWritePost", {
+			pattern = { "*.js", "*.ts" },
+			callback = function(ctx)
+				client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
+			end,
+		})
+		require("lsp/on-attach").on_attach(client, bufnr)
+	end,
+})
 
 lspconfig.ocamllsp.setup({
 	on_attach = require("lsp/on-attach").on_attach,
