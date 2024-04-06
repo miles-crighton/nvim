@@ -1,6 +1,6 @@
 return {
-	-- -- Misc
-  "almo7aya/openingh.nvim",
+	-- Misc
+	"almo7aya/openingh.nvim",
 	"nvim-lua/plenary.nvim",
 	"NvChad/ui",
 	{
@@ -46,8 +46,8 @@ return {
 			require("nvim-surround").setup()
 		end,
 	},
+
 	-- Git
-	-- Causing slow down on scroll
 	{
 		"lewis6991/gitsigns.nvim",
 		ft = "gitcommit",
@@ -72,7 +72,7 @@ return {
 	},
 	{ "APZelos/blamer.nvim" },
 
-	-- -- Themes
+	-- Themes
 	{ "folke/tokyonight.nvim" },
 	{ "drewtempelmeyer/palenight.vim" },
 	{
@@ -83,7 +83,7 @@ return {
 	},
 	{ "rktjmp/lush.nvim" },
 
-	-- -- LSP
+	-- LSP
 	"neovim/nvim-lspconfig",
 	{ "williamboman/mason.nvim", opts = {} },
 	{
@@ -110,6 +110,11 @@ return {
 			})
 		end,
 	},
+	{
+		"luckasRanarison/tailwind-tools.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		opts = {}, -- your configuration
+	},
 	"jose-elias-alvarez/null-ls.nvim",
 	{
 		"simrat39/rust-tools.nvim",
@@ -119,12 +124,6 @@ return {
 	},
 
 	-- -- LSP utils
-	-- {
-	--   "folke/trouble.nvim",
-	--   config = function()
-	--     require("trouble").setup({})
-	--   end,
-	-- },
 	{
 		"glepnir/lspsaga.nvim",
 		event = "BufRead",
@@ -140,7 +139,7 @@ return {
 		end,
 	},
 
-	-- -- Navigation
+	-- Navigation
 	{
 		"nvim-telescope/telescope.nvim",
 		config = function()
@@ -157,7 +156,7 @@ return {
 		end,
 	},
 
-	-- -- Autocomplete & Snippits
+	-- Autocomplete & Snippits
 	{
 		"hrsh7th/nvim-cmp",
 		config = function()

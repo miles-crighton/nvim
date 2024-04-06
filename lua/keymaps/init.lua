@@ -10,6 +10,9 @@ local key_maps = {
 		},
 
 		normal_mode = {
+			-- Search and replace word under cursor
+			["<Leader>rr"] = { ":%s/<C-R><C-W>//g<Left><Left>", { noremap = true, silent = true } },
+
 			["<Space>"] = "<NOP>",
 
 			-- Better window movement
