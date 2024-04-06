@@ -246,18 +246,10 @@ return {
 	{
 		"nvim-neotest/neotest",
 		dependencies = {
-			"haydenmeade/neotest-jest",
-			"nvim-neotest/neotest-go",
-			"nvim-neotest/neotest-plenary",
+			"nvim-neotest/nvim-nio",
+			"nvim-lua/plenary.nvim",
+			"antoinemadec/FixCursorHold.nvim",
+			"nvim-treesitter/nvim-treesitter",
 		},
-		config = function()
-			require("neotest").setup({
-				adapters = {
-					require("neotest-jest"),
-					require("neotest-go"),
-					require("neotest-plenary"),
-				},
-			})
-		end,
 	},
 }
