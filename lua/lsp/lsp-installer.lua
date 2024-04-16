@@ -29,11 +29,11 @@ lspconfig.terraformls.setup({
 	filetypes = { "terraform", "tf" },
 })
 
-lspconfig.gopls.setup({})
+lspconfig.gopls.setup({ on_attach = require("lsp/on-attach").on_attach })
 
-lspconfig.html.setup({})
+lspconfig.html.setup({ on_attach = require("lsp/on-attach").on_attach })
 
-lspconfig.htmx.setup({})
+lspconfig.htmx.setup({ on_attach = require("lsp/on-attach").on_attach })
 
 lspconfig.svelte.setup({
 	on_attach = function(client, bufnr)
