@@ -63,6 +63,9 @@ local key_maps = {
 
 			["<Leader><C-r>"] = ":OpenInGHRepo<CR>",
 			["<Leader>gf"] = ":OpenInGHFile<CR>",
+
+			-- Re-map as netrw is disabled
+			["gx"] = { ":execute '!open ' . shellescape(expand('<cfile>'), 1)<CR>", { noremap = true, silent = true } },
 		},
 		term_mode = {
 			-- Terminal window navigation
