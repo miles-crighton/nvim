@@ -2,40 +2,9 @@ local M = {}
 
 vim.opt.completeopt = "menuone,noselect"
 
-local function border(hl_name)
-	return {
-		{ "╭", hl_name },
-		{ "─", hl_name },
-		{ "╮", hl_name },
-		{ "│", hl_name },
-		{ "╯", hl_name },
-		{ "─", hl_name },
-		{ "╰", hl_name },
-		{ "│", hl_name },
-	}
-end
-
 M.config = function()
 	local cmp = require("cmp")
-	local cmp_window = require("cmp.utils.window")
-
-	cmp_window.info_ = cmp_window.info
-	cmp_window.info = function(self)
-		local info = self:info_()
-		info.scrollable = false
-		return info
-	end
-
 	return {
-		window = {
-			completion = {
-				border = border("CmpBorder"),
-				winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
-			},
-			documentation = {
-				border = border("CmpDocBorder"),
-			},
-		},
 		formatting = {
 			format = function(_, vim_item)
 				local icons = require("nvchad_ui.icons").lspkind
@@ -44,36 +13,24 @@ M.config = function()
 			end,
 		},
 		mapping = {
-			["<C-p>"] = cmp.mapping.select_prev_item(),
-			["<C-n>"] = cmp.mapping.select_next_item(),
-			["<C-d>"] = cmp.mapping.scroll_docs(-4),
-			["<C-f>"] = cmp.mapping.scroll_docs(4),
-			["<C-Space>"] = cmp.mapping.complete(),
-			["<C-e>"] = cmp.mapping.close(),
-			["<CR>"] = cmp.mapping.confirm({
-				behavior = cmp.ConfirmBehavior.Replace,
-				select = false,
-			}),
-			["<Tab>"] = cmp.mapping(function(fallback)
+			["<C-y>"] = cmp.mapping.confirm({ select = false }),
+			["<C-e>"] = cmp.mapping.abort(),
+			["<Up>"] = cmp.mapping.select_prev_item({ behavior = "select" }),
+			["<Down>"] = cmp.mapping.select_next_item({ behavior = "select" }),
+			["<C-p>"] = cmp.mapping(function()
 				if cmp.visible() then
-					cmp.select_next_item()
+					cmp.select_prev_item({ behavior = "insert" })
 				else
-					fallback()
+					cmp.complete()
 				end
-			end, {
-				"i",
-				"s",
-			}),
-			["<S-Tab>"] = cmp.mapping(function(fallback)
+			end),
+			["<C-n>"] = cmp.mapping(function()
 				if cmp.visible() then
-					cmp.select_prev_item()
+					cmp.select_next_item({ behavior = "insert" })
 				else
-					fallback()
+					cmp.complete()
 				end
-			end, {
-				"i",
-				"s",
-			}),
+			end),
 		},
 		sources = {
 			{ name = "luasnip" },

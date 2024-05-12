@@ -35,6 +35,17 @@ lspconfig.html.setup({ on_attach = require("lsp/on-attach").on_attach })
 
 lspconfig.htmx.setup({ on_attach = require("lsp/on-attach").on_attach })
 
+lspconfig.lua_ls.setup({
+	on_attach = require("lsp/on-attach").on_attach,
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { "vim" },
+			},
+		},
+	},
+})
+
 lspconfig.svelte.setup({
 	on_attach = function(client, bufnr)
 		-- Changes in TS files is not picked up in .svelte files,
