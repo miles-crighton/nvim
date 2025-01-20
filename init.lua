@@ -1,6 +1,6 @@
 require("settings")
 
-local plugins = require("plugin-config")
+require("plugin-config")
 require("plugin-loader")
 
 require("autocommands")

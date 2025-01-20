@@ -5,13 +5,13 @@ vim.opt.completeopt = "menuone,noselect"
 M.config = function()
 	local cmp = require("cmp")
 	return {
-		formatting = {
-			format = function(_, vim_item)
-				local icons = require("nvchad_ui.icons").lspkind
-				vim_item.kind = string.format("%s %s", icons[vim_item.kind], vim_item.kind)
-				return vim_item
-			end,
-		},
+		-- formatting = {
+		-- 	format = function(_, vim_item)
+		-- 		local icons = require("nvchad_ui.icons").lspkind
+		-- 		vim_item.kind = string.format("%s %s", icons[vim_item.kind], vim_item.kind)
+		-- 		return vim_item
+		-- 	end,
+		-- },
 		mapping = {
 			["<C-y>"] = cmp.mapping.confirm({ select = false }),
 			["<C-e>"] = cmp.mapping.abort(),
