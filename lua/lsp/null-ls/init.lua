@@ -31,18 +31,21 @@ M.setup = function()
     debug = true,
     diagnostics_format = "#{m} [#{c}]",
     sources = {
-      diagnostics.eslint_d.with({
-        condition = function(utils)
-          return eslint_config_exists()
-        end,
-      }),
-      diagnostics.eslint.with({
-        filetypes = { "svelte" },
-        -- Load the local eslint config
-        command = "./node_modules/.bin/eslint",
-      }),
+      -- diagnostics.eslint_d.with({
+      --   condition = function(utils)
+      --     return eslint_config_exists()
+      --   end,
+      -- }),
+      -- diagnostics.eslint.with({
+      --   filetypes = { "svelte" },
+      --   condition = function(utils)
+      --     return eslint_config_exists()
+      --   end,
+      --   -- Load the local eslint config
+      --   command = "./node_modules/.bin/eslint",
+      -- }),
       formatting.prettierd.with({
-        extra_filetypes = { "svelte" },
+        filetypes = { "svelte" },
       }),
       formatting.black.with({ extra_args = { "--fast" } }),
       formatting.stylua,

@@ -25,14 +25,14 @@ return {
     "norcalli/nvim-colorizer.lua",
     config = function()
       require("colorizer").setup(nil, {
-        RGB = true,      -- #RGB hex codes
-        RRGGBB = true,   -- #RRGGBB hex codes
-        names = false,   -- "Name" codes like Blue
-        RRGGBBAA = true, -- #RRGGBBAA hex codes
-        rgb_fn = true,   -- CSS rgb() and rgba() functions
-        hsl_fn = true,   -- CSS hsl() and hsla() functions
-        css = false,     -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-        css_fn = false,  -- Enable all CSS *functions*: rgb_fn, hsl_fn
+        RGB = true,          -- #RGB hex codes
+        RRGGBB = true,       -- #RRGGBB hex codes
+        names = false,       -- "Name" codes like Blue
+        RRGGBBAA = true,     -- #RRGGBBAA hex codes
+        rgb_fn = true,       -- CSS rgb() and rgba() functions
+        hsl_fn = true,       -- CSS hsl() and hsla() functions
+        css = false,         -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+        css_fn = false,      -- Enable all CSS *functions*: rgb_fn, hsl_fn
         -- Available modes: foreground, background
         mode = "background", -- Set the display mode.
       })
@@ -102,20 +102,14 @@ return {
   {
     "pmizio/typescript-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-    config = function()
-      require("typescript-tools").setup({
-        on_attach = function(client, bufnr)
-          require("lsp.on-attach").on_attach(client, bufnr)
-        end,
-      })
-    end,
+    opts = {},
   },
   {
     "luckasRanarison/tailwind-tools.nvim",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     opts = {}, -- your configuration
   },
-  "jose-elias-alvarez/null-ls.nvim",
+  "nvimtools/none-ls.nvim",
   {
     "simrat39/rust-tools.nvim",
     config = function()

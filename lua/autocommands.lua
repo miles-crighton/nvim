@@ -9,7 +9,7 @@ end
 
 define_augroups({
   _general_settings = {
-    { "TextYankPost", "*", "lua require('vim.highlight').on_yank({higroup = 'Search', timeout = 200})" },
+    { "TextYankPost", "*", "lua vim.highlight.on_yank({higroup = 'Search', timeout = 200})" },
     { "VimLeavePre",  "*", "set title set titleold=" },
     { "CursorHold",   "*", "lua vim.diagnostic.open_float()" },
     { "BufWritePre",  "*", "lua vim.lsp.buf.format()" },
