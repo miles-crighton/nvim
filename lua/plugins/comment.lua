@@ -1,62 +1,58 @@
-local M = {}
+local M = { "numToStr/Comment.nvim" }
 
-function M.config()
-	return {
-		active = true,
-		on_config_done = nil,
-		---Add a space b/w comment and the line
-		---@type boolean
-		padding = true,
+M.dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" }
 
-		---Lines to be ignored while comment/uncomment.
-		---Could be a regex string or a function that returns a regex string.
-		---Example: Use '^$' to ignore empty lines
-		---@type string|function
-		ignore = "^$",
+M.opts = {
+  active = true,
+  on_config_done = nil,
+  ---Add a space b/w comment and the line
+  ---@type boolean
+  padding = true,
 
-		---Whether to create basic (operator-pending) and extra mappings for NORMAL/VISUAL mode
-		---@type table
-		mappings = {
-			---operator-pending mapping
-			---Includes `gcc`, `gcb`, `gc[count]{motion}` and `gb[count]{motion}`
-			basic = true,
-			---extended mapping
-			---Includes `g>`, `g<`, `g>[count]{motion}` and `g<[count]{motion}`
-			extra = false,
-		},
+  ---Lines to be ignored while comment/uncomment.
+  ---Could be a regex string or a function that returns a regex string.
+  ---Example: Use '^$' to ignore empty lines
+  ---@type string|function
+  ignore = "^$",
 
-		---LHS of line and block comment toggle mapping in NORMAL/VISUAL mode
-		---@type table
-		toggler = {
-			---line-comment toggle
-			line = "gcc",
-			---block-comment toggle
-			block = "gbc",
-		},
+  ---Whether to create basic (operator-pending) and extra mappings for NORMAL/VISUAL mode
+  ---@type table
+  mappings = {
+    ---operator-pending mapping
+    ---Includes `gcc`, `gcb`, `gc[count]{motion}` and `gb[count]{motion}`
+    basic = true,
+    ---extended mapping
+    ---Includes `g>`, `g<`, `g>[count]{motion}` and `g<[count]{motion}`
+    extra = false,
+  },
 
-		---LHS of line and block comment operator-mode mapping in NORMAL/VISUAL mode
-		---@type table
-		opleader = {
-			---line-comment opfunc mapping
-			line = "gc",
-			---block-comment opfunc mapping
-			block = "gb",
-		},
+  ---LHS of line and block comment toggle mapping in NORMAL/VISUAL mode
+  ---@type table
+  toggler = {
+    ---line-comment toggle
+    line = "gcc",
+    ---block-comment toggle
+    block = "gbc",
+  },
 
-		---Pre-hook, called before commenting the line
-		---@type function|nil
-		pre_hook = function(_ctx)
-			return require("ts_context_commentstring.internal").calculate_commentstring()
-		end,
+  ---LHS of line and block comment operator-mode mapping in NORMAL/VISUAL mode
+  ---@type table
+  opleader = {
+    ---line-comment opfunc mapping
+    line = "gc",
+    ---block-comment opfunc mapping
+    block = "gb",
+  },
 
-		---Post-hook, called after commenting is done
-		---@type function|nil
-		post_hook = nil,
-	}
-end
+  ---Pre-hook, called before commenting the line
+  ---@type function|nil
+  pre_hook = function(_ctx)
+    return require("ts_context_commentstring.internal").calculate_commentstring()
+  end,
 
-function M.setup()
-	require("Comment").setup(M.config())
-end
+  ---Post-hook, called after commenting is done
+  ---@type function|nil
+  post_hook = nil,
+}
 
 return M

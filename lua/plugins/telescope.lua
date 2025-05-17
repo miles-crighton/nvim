@@ -1,6 +1,6 @@
-local M = {}
+local M = { "nvim-telescope/telescope.nvim" }
 
-M.setup = function()
+function M.config()
   local actions = require("telescope.actions")
 
   require("telescope").setup({

@@ -1,7 +1,6 @@
 require("settings")
 
-require("plugin-config")
-require("plugin-loader")
+require("config.lazy")
 
 require("autocommands")
 require("keymaps").setup()
