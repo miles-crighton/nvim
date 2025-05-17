@@ -110,12 +110,6 @@ return {
     opts = {}, -- your configuration
   },
   "nvimtools/none-ls.nvim",
-  {
-    "simrat39/rust-tools.nvim",
-    config = function()
-      require("rust-tools").setup()
-    end,
-  },
 
   -- -- LSP utils
   {
@@ -185,12 +179,6 @@ return {
     end,
   },
   "nvim-treesitter/playground",
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter-context",
-  -- 	init = function()
-  -- 		require("treesitter-context").setup()
-  -- 	end,
-  -- },
   {
     "numToStr/Comment.nvim",
     config = function()
@@ -204,13 +192,6 @@ return {
   -- UI
   { "kevinhwang91/nvim-bqf" },
   {
-    "kyazdani42/nvim-tree.lua",
-    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
-    config = function()
-      require("plugins.nvimtree").setup()
-    end,
-  },
-  {
     "nvim-lualine/lualine.nvim",
     config = function()
       require("plugins.lualine").setup()
@@ -223,10 +204,6 @@ return {
     end,
   },
   {
-    "sindrets/diffview.nvim",
-    cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles", "DiffviewFileHistory" },
-  },
-  {
     "stevearc/oil.nvim",
     opts = {
       view_options = {
@@ -234,16 +211,5 @@ return {
       },
     },
     dependencies = { "nvim-tree/nvim-web-devicons" },
-  },
-
-  -- Test and Debugging
-  {
-    "nvim-neotest/neotest",
-    dependencies = {
-      "nvim-neotest/nvim-nio",
-      "nvim-lua/plenary.nvim",
-      "antoinemadec/FixCursorHold.nvim",
-      "nvim-treesitter/nvim-treesitter",
-    },
   },
 }
