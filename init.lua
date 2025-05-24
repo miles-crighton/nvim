@@ -1,4 +1,4 @@
-require("settings")
+require("config.options")
 
 require("config.lazy")
 
